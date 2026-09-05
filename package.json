@@ -1,0 +1,20 @@
+{
+  "name": "nurshah-global-trade-portal",
+  "version": "1.0.0",
+  "description": "Nurshah Global - Premier Physical Commodity Brokerage & Global Trade Portal",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "serve": "npx serve .",
+    "dev:python": "python -m http.server 8080"
+  },
+  "keywords": [
+    "commodity-brokerage",
+    "global-trade",
+    "raw-materials",
+    "trade-portal",
+    "logistics"
+  ],
+  "author": "Nurshah Global",
+  "license": "ISC"
+}

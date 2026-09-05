@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Nurshah Global | Physical Commodity Brokerage & Global Trade Portal</title>
+  <meta name="description" content="Nurshah Global specializes in physical commodity brokerage, connecting verified miners, producers, and industrial consumers across copper, iron ore, coal, and clean energy."/>
+
+  <!-- Tailwind CSS with Forms and Container Queries -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#131313",
+            "surface-dim": "#131313",
+            "surface-bright": "#393939",
+            "surface-container-lowest": "#0e0e0e",
+            "surface-container-low": "#1c1b1b",
+            "surface-container": "#201f1f",
+            "surface-container-high": "#2a2a2a",
+            "surface-container-highest": "#353534",
+            "on-surface": "#e5e2e1",
+            "on-surface-variant": "#d0c5af",
+            "primary": "#f2ca50",
+            "on-primary": "#3c2f00",
+            "primary-container": "#d4af37",
+            "on-primary-container": "#554300",
+            "secondary": "#ffe2ab",
+            "outline": "#99907c",
+            "outline-variant": "#4d4635",
+            "background": "#131313",
+            "on-background": "#e5e2e1"
+          },
+          fontFamily: {
+            "headline-lg": ["Noto Serif", "serif"],
+            "headline-md": ["Noto Serif", "serif"],
+            "headline-sm": ["Noto Serif", "serif"],
+            "body-lg": ["Manrope", "sans-serif"],
+            "body-md": ["Manrope", "sans-serif"],
+            "label-caps": ["Manrope", "sans-serif"]
+          },
+          spacing: {
+            margin: "48px",
+            gutter: "24px",
+            "container-max": "1280px"
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Tactile Modernist Styles -->
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+
+  <!-- TOP APP BAR / HEADER -->
+  <header class="fixed top-0 w-full z-50 border-b border-zinc-800 bg-zinc-950/95 backdrop-blur-md shadow-[0_1px_0_0_rgba(255,255,255,0.05)_inset,0_4px_20px_rgba(0,0,0,0.5)]">
+    <nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto w-full">
+      <div class="flex items-center gap-4">
+        <button data-menu-toggle class="text-amber-500 hover:bg-white/5 p-2 rounded-lg transition-colors md:hidden focus:outline-none" aria-label="Open Menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <a href="index.html" class="text-2xl font-bold text-amber-500 uppercase tracking-tighter shadow-sm font-headline-md flex items-center gap-2">
+          <span>Nurshah Global</span>
+        </a>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-8">
+        <a class="text-amber-500 border-b-2 border-amber-500 pb-1 font-headline-md font-semibold tracking-wide" href="index.html">Home</a>
+        <a class="text-zinc-400 hover:text-zinc-100 transition-colors font-headline-md font-semibold tracking-wide" href="products.html">Products</a>
+        <a class="text-zinc-400 hover:text-zinc-100 transition-colors font-headline-md font-semibold tracking-wide" href="estimate.html">Rate Estimator</a>
+        <a class="text-zinc-400 hover:text-zinc-100 transition-colors font-headline-md font-semibold tracking-wide" href="about.html">About &amp; Founder</a>
+        <a class="text-zinc-400 hover:text-zinc-100 transition-colors font-headline-md font-semibold tracking-wide" href="contact.html">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="estimate.html" class="btn-3d px-5 py-2.5 rounded-lg text-xs uppercase tracking-wider font-bold">
+          List Product
+        </a>
+      </div>
+    </nav>
+
+    <!-- LIVE COMMODITY SPOT TICKER BAR -->
+    <div class="border-t border-zinc-800/80 bg-zinc-950/90 py-1.5 overflow-hidden relative">
+      <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-zinc-950 to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-zinc-950 to-transparent z-10 pointer-events-none"></div>
+      <div class="flex items-center">
+        <span class="pl-6 pr-3 text-[10px] font-bold text-primary tracking-wider uppercase whitespace-nowrap flex items-center gap-1">
+          <span class="w-2 h-2 rounded-full bg-primary animate-ping inline-block"></span>
+          SPOT FEEDS:
+        </span>
+        <div class="overflow-hidden flex-1">
+          <div id="ticker-track" class="ticker-track"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div id="drawer-overlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  <aside id="mobile-drawer" class="fixed top-0 right-0 w-80 max-w-full h-full bg-zinc-950 border-l border-zinc-800 z-50 translate-x-full transition-transform duration-300 flex flex-col p-6 shadow-2xl">
+    <div class="flex items-center justify-between pb-6 border-b border-zinc-800">
+      <div class="text-xl font-bold text-amber-500 font-headline-md">NURSHAH GLOBAL</div>
+      <button id="drawer-close" class="text-zinc-400 hover:text-white p-2 rounded-lg" aria-label="Close Menu">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <nav class="flex flex-col space-y-5 py-8 text-base font-semibold">
+      <a href="index.html" class="text-amber-500 flex items-center justify-between">
+        <span>Home</span>
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
+      <a href="products.html" class="text-zinc-300 hover:text-white flex items-center justify-between">
+        <span>Products Catalog</span>
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
+      <a href="estimate.html" class="text-zinc-300 hover:text-white flex items-center justify-between">
+        <span>Rate Estimator &amp; Listing</span>
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
+      <a href="about.html" class="text-zinc-300 hover:text-white flex items-center justify-between">
+        <span>About &amp; Founder</span>
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
+      <a href="contact.html" class="text-zinc-300 hover:text-white flex items-center justify-between">
+        <span>Contact HQ</span>
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
+    </nav>
+
+    <div class="mt-auto pt-6 border-t border-zinc-800 space-y-4">
+      <a href="estimate.html" class="btn-3d w-full py-3 rounded-lg text-center text-xs uppercase tracking-wider block">
+        List Your Product
+      </a>
+      <div class="text-xs text-zinc-500 space-y-1">
+        <p>Inquiries: <a href="mailto:admin@nurshah.com" class="text-amber-400 hover:underline">admin@nurshah.com</a></p>
+        <p>Executive: <a href="mailto:huzaifaali@nurshah.com" class="text-amber-400 hover:underline">huzaifaali@nurshah.com</a></p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="pt-28 flex-1">
+    
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[720px] flex items-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img alt="Global Logistics" class="w-full h-full object-cover brightness-50 contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNYSGjUh8gfsmEUSNrRHRXlgb8nrPGab8fSQyub8yl0Y7m3kk8i69UfdYYMI-9Tzu7iSgHd2yUGYLou5ORsJJnpvRempmf4X32LJXL5FYBwXDhNDTQU9X2fpuHcOiWHvF5m7ysIcOjEf3HCeeesoo47YoG8twBi2h66XwTMdy8POYkAurU-ZHC0fLdWArjmHB8zkmoqKoUYCJEJM-2UZyNfHOI2Fl91WVDNOp1BKhksDYMxNQ-bfsOaLInC4yrWssYz01zMhL9cFUR"/>
+        <div class="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-margin w-full py-16">
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-3.5 py-1 rounded-full text-primary font-label-caps text-xs tracking-widest mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            ESTABLISHED RELIABILITY &bull; PHYSICAL BROKERAGE
+          </div>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-headline-lg font-bold text-on-background mb-6 leading-tight">
+            We Weave <br/>
+            <span class="text-primary italic">Global Connections</span>
+          </h1>
+          <p class="text-body-lg text-on-surface-variant mb-10 max-w-lg leading-relaxed">
+            The definitive bridge for physical commodities. We orchestrate the seamless flow of raw materials across continents, ensuring every trade is anchored in institutional trust, verified quality, and 5% transparent margins.
+          </p>
+          <div class="flex flex-wrap gap-5 items-center">
+            <a href="products.html" class="btn-3d px-8 py-4 rounded-lg font-label-caps text-sm flex items-center gap-2">
+              <span>VIEW PRODUCTS</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+            <a href="estimate.html" class="btn-secondary-glow px-8 py-4 rounded-lg text-on-surface font-label-caps text-sm hover:text-primary transition-all flex items-center gap-2">
+              <span>RATE ESTIMATOR</span>
+              <span class="material-symbols-outlined text-[18px]">calculate</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIVE SHIPMENT TRACKER CARD (Interactive) -->
+      <div class="absolute bottom-10 right-6 lg:right-margin hidden lg:block w-96 glass-card p-6 rounded-xl border-l-4 border-primary beveled-edge shadow-2xl">
+        <div class="flex justify-between items-center mb-3">
+          <h3 class="text-xs font-bold text-primary tracking-wider uppercase flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-base">sailing</span>
+            LIVE SHIPMENT TRACKER
+          </h3>
+          <span class="text-[10px] font-mono text-zinc-400 bg-zinc-900/80 px-2 py-0.5 rounded border border-white/5">ID: NS-9942</span>
+        </div>
+        <p class="text-xs text-zinc-300 font-semibold mb-2">Grade A Copper &bull; 2,500 MT</p>
+        <div class="relative flex items-center justify-between mb-2">
+          <div class="absolute top-1/2 left-0 w-full h-[2px] bg-zinc-800 -translate-y-1/2"></div>
+          <div class="absolute top-1/2 left-0 w-2/3 h-[2px] bg-primary shadow-[0_0_10px_#f2ca50] -translate-y-1/2"></div>
+          <div class="relative z-10 w-3 h-3 rounded-full bg-primary ring-4 ring-primary/20"></div>
+          <div class="relative z-10 w-3 h-3 rounded-full bg-primary ring-4 ring-primary/20"></div>
+          <div class="relative z-10 w-3 h-3 rounded-full bg-zinc-700"></div>
+        </div>
+        <div class="flex justify-between text-[10px] text-zinc-400 mb-4">
+          <span>Durban (Loaded)</span>
+          <span class="text-primary font-bold">Atlantic (Transit)</span>
+          <span>Rotterdam (Sep 12)</span>
+        </div>
+        <button data-track-shipment data-shipment-id="NS-9942" class="w-full bg-zinc-900/90 hover:bg-zinc-800 text-primary border border-primary/30 rounded py-2 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors">
+          <span>Inspect Voyage Milestones</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- BENTO GRID OVERVIEW -->
+    <section class="py-24 max-w-7xl mx-auto px-6 md:px-margin">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+        <div class="md:col-span-8 flex flex-col justify-center">
+          <span class="text-primary font-label-caps text-xs tracking-widest uppercase mb-3">TACTILE BROKERAGE ARCHITECTURE</span>
+          <h2 class="text-3xl md:text-4xl font-headline-md mb-6 leading-snug">Bridging Global Markets with <br/><span class="text-primary">Physical Materiality</span></h2>
+          <p class="text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Nurshah Global specializes in the brokerage of high-value raw materials. We connect vetted sellers of metals, minerals, and energy sources with global buyers who demand quality and consistency. Our platform digitizes international trade execution without losing the human touch of old-world brokerage.
+          </p>
+        </div>
+
+        <div class="md:col-span-4 glass-card p-8 rounded-xl flex flex-col items-center text-center justify-center relative overflow-hidden group beveled-edge gold-glow">
+          <div class="absolute inset-0 brushed-metal pointer-events-none"></div>
+          <div class="w-16 h-16 rounded-full bg-surface-container-high border border-primary/30 flex items-center justify-center text-primary mb-5 shadow-[0_0_20px_rgba(242,202,80,0.15)]">
+            <span class="material-symbols-outlined text-3xl">handshake</span>
+          </div>
+          <h4 class="text-xl font-headline-sm font-bold mb-2">Exclusive Trust</h4>
+          <p class="text-body-md text-on-surface-variant text-sm">Direct access to closed-market commodities, pre-vetted mine operators, and Tier-1 smelters.</p>
+        </div>
+
+        <div class="md:col-span-4 glass-card p-8 rounded-xl relative group overflow-hidden beveled-edge gold-glow">
+          <div class="absolute inset-0 brushed-metal pointer-events-none"></div>
+          <span class="material-symbols-outlined text-primary text-3xl mb-4">inventory_2</span>
+          <h4 class="text-xl font-headline-sm font-bold mb-2">Raw &amp; Refined Metals</h4>
+          <p class="text-body-md text-on-surface-variant text-sm">From cathode copper to high-grade fine iron ore and steel scrap, we source the industrial bedrock.</p>
+        </div>
+
+        <div class="md:col-span-4 glass-card p-8 rounded-xl relative group overflow-hidden border-t-2 border-primary beveled-edge gold-glow">
+          <div class="absolute inset-0 brushed-metal pointer-events-none"></div>
+          <span class="material-symbols-outlined text-primary text-3xl mb-4">public</span>
+          <h4 class="text-xl font-headline-sm font-bold mb-2">Export Logistics</h4>
+          <p class="text-body-md text-on-surface-variant text-sm">Chartering, Incoterms (CIF/FOB), bill of lading oversight, and customs navigation with real-time AIS tracking.</p>
+        </div>
+
+        <div class="md:col-span-4 glass-card p-8 rounded-xl relative group overflow-hidden beveled-edge gold-glow">
+          <div class="absolute inset-0 brushed-metal pointer-events-none"></div>
+          <span class="material-symbols-outlined text-primary text-3xl mb-4">monitoring</span>
+          <h4 class="text-xl font-headline-sm font-bold mb-2">Spot Market Intel</h4>
+          <p class="text-body-md text-on-surface-variant text-sm">Real-time benchmark pricing across LME, CME, and Baltic exchanges paired with transparent 5% brokerage margins.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER'S EXECUTIVE ASSURANCE BANNER -->
+    <section class="max-w-7xl mx-auto px-6 md:px-margin pb-16">
+      <div class="bg-surface-container-high rounded-2xl border border-white/5 p-8 md:p-10 beveled-edge brushed-metal relative overflow-hidden flex flex-col md:flex-row items-center gap-8 shadow-2xl">
+        <div class="w-28 h-28 md:w-32 md:h-32 rounded-2xl overflow-hidden border-2 border-primary/50 shrink-0 shadow-lg">
+          <img src="assets/images/founder.jpg" alt="Muhammad Huzaifa Ali - Founder &amp; CEO" class="w-full h-full object-cover"/>
+        </div>
+        <div class="space-y-3 flex-1 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 text-xs font-label-caps text-primary tracking-widest uppercase">
+            <span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+            EXECUTIVE COMMITMENT &bull; OLD WORLD RELIABILITY
+          </div>
+          <p class="text-base sm:text-lg text-zinc-200 font-headline-sm italic leading-relaxed">
+            &ldquo;We founded Nurshah Global on the principle that trust is the ultimate currency in global trade. Every contract we broker is backed by our direct oversight, institutional escrow, and unwavering dedication to material integrity.&rdquo;
+          </p>
+          <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-1">
+            <div>
+              <p class="text-xs font-label-caps font-bold text-primary tracking-wider">MUHAMMAD HUIZAIFA ALI</p>
+              <p class="text-xs text-zinc-500">Founder &amp; Chief Executive Officer</p>
+            </div>
+            <span class="text-zinc-600 hidden sm:inline">&bull;</span>
+            <a href="about.html" class="text-xs text-amber-400/90 hover:underline font-semibold flex items-center gap-1">
+              <span>Read Full Founder's Message</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED MATERIAL LISTINGS -->
+    <section class="bg-surface-container-low py-24 border-y border-white/5">
+      <div class="max-w-7xl mx-auto px-6 md:px-margin">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+          <div>
+            <span class="text-primary font-label-caps text-xs tracking-widest uppercase mb-2 block">SPOT COMMODITY ALLOCATIONS</span>
+            <h2 class="text-3xl md:text-4xl font-headline-md font-bold mb-2">Current Material Listings</h2>
+            <p class="text-on-surface-variant text-sm max-w-xl">Direct sourcing allocations with verified assays and ready loading windows.</p>
+          </div>
+          <a href="products.html" class="text-primary font-label-caps text-sm flex items-center gap-2 hover:translate-x-1 transition-transform">
+            <span>EXPLORE FULL PORTFOLIO</span>
+            <span class="material-symbols-outlined text-base">arrow_right_alt</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1: Copper -->
+          <div class="bg-surface-container-highest rounded-xl overflow-hidden shadow-2xl group border border-zinc-800 hover:border-primary/50 transition-all beveled-edge flex flex-col">
+            <div class="h-48 overflow-hidden relative">
+              <img alt="Industrial Copper" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKwtzrvgtPkxzx2xVWwPfPuErwdYaPB8LMvYJGJKamgFjjxtyb2topRlInf2noTnG0xqXZJte_yAWxajEjKPP-A-r_-j3jbrr-glxi4jQZ-NWPNuzzwkf2B1M6PSiJEnuHD7WzKRrwYMY4KejjEoCd-SVtUjSSzU7BEucSYLIlpiYEsdd_-dwisszKonKhPvcMnJuH3GoKxZjMUennGX_t1E1wscYWqvW3xdf1hOL7HIDiDu-n_igSeLmjntgDJ3Pl3Q5bwbPCH_iL"/>
+              <div class="absolute top-4 right-4 bg-zinc-950/85 backdrop-blur px-3 py-1 rounded text-[10px] font-bold text-primary border border-primary/20">
+                READY FOR EXPORT
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-xl font-headline-sm font-bold mb-2 text-white">Grade A Copper Cathodes</h3>
+                <p class="text-xs text-zinc-400 mb-4">Electrolytic copper cathodes 99.99% purity. LME approved brands with complete assay certificates.</p>
+                <div class="flex items-center gap-4 text-xs text-zinc-400 mb-6">
+                  <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">location_on</span> DRC / Zambia</span>
+                  <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">weight</span> 500 MT Min.</span>
+                </div>
+              </div>
+              <div class="flex justify-between items-center pt-4 border-t border-zinc-800">
+                <div>
+                  <span class="text-[10px] text-zinc-500 block">BENCHMARK</span>
+                  <span class="text-primary font-bold text-sm">$9,285 / MT</span>
+                </div>
+                <button data-request-estimate data-product="Grade A Copper Cathodes" data-moq="500" class="btn-3d px-4 py-2 rounded text-xs">
+                  REQUEST QUOTE
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Iron Ore -->
+          <div class="bg-surface-container-highest rounded-xl overflow-hidden shadow-2xl group border border-zinc-800 hover:border-primary/50 transition-all beveled-edge flex flex-col">
+            <div class="h-48 overflow-hidden relative">
+              <img alt="Iron Ore" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDQIDEwWxy71HatqL28CNpU2dQmu7fBgdrZ_6L0w_-8LkIJOwHbzSo7YxZGZC4OJUBPuAxU8lpgiQFT5TsJOm7myk-8IflqY3ToLxAouptSPm_d3h83TZniihAXzAylcGPi5vVsTX0NCbdSuRCHS2yHIRECs3O1Tm5GBUQ-5RAOdCkaJaPnMtu91jfkmcL-7hku4_3wJoKx9BYjaf5r-KYZayfO8HsaCKfmWIWI1pbcpPcW411XvnXNE-bNcSuFemqKxkcEFzH7YD1"/>
+              <div class="absolute top-4 right-4 bg-zinc-950/85 backdrop-blur px-3 py-1 rounded text-[10px] font-bold text-primary border border-primary/20">
+                CONTRACT ALLOCATION
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-xl font-headline-sm font-bold mb-2 text-white">62% Fe Fine Iron Ore</h3>
+                <p class="text-xs text-zinc-400 mb-4">Sinter feed iron ore fines sourced directly from Western Australia tier-1 mining basins.</p>
+                <div class="flex items-center gap-4 text-xs text-zinc-400 mb-6">
+                  <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">location_on</span> Port Hedland, AU</span>
+                  <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">weight</span> 10,000 MT Min.</span>
+                </div>
+              </div>
+              <div class="flex justify-between items-center pt-4 border-t border-zinc-800">
+                <div>
+                  <span class="text-[10px] text-zinc-500 block">CFR QINGDAO</span>
+                  <span class="text-primary font-bold text-sm">$118.50 / MT</span>
+                </div>
+                <button data-request-estimate data-product="62% Fe Fine Iron Ore" data-moq="10000" class="btn-3d px-4 py-2 rounded text-xs">
+                  REQUEST QUOTE
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Coal -->
+          <div class="bg-surface-container-highest rounded-xl overflow-hidden shadow-2xl group border border-zinc-800 hover:border-primary/50 transition-all beveled-edge flex flex-col">
+            <div class="h-48 overflow-hidden relative">
+              <img alt="Coal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAudioHyhv50qkZnwv28yqgO-dtOmXDCsXmKjEx8bpRsF35njY0eSXW-PVgkppxcQcDXXxGygbYWxIP5COlXFidIoG-Obun6OYPQTTF2dDK2yaGLs8SkO0EZPRgOc5uG9pl09sLdSepiC9cPVRq6wW6jOwV8LwuLyKVBmgdcAvR24eazrN9myBMteStemWBCDfHL6UDr0vhDqAGXNC8uqH4hF1D3Lql_HkvHmNg-92CM_4yNPkRzvnkSf4K5jhibmCpGyYq44v6E5Yk"/>
+              <div class="absolute top-4 right-4 bg-zinc-950/85 backdrop-blur px-3 py-1 rounded text-[10px] font-bold text-primary border border-primary/20">
+                SPOT ALLOCATION
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-xl font-headline-sm font-bold mb-2 text-white">Thermal Coal (GAR 5800)</h3>
+                <p class="text-xs text-zinc-400 mb-4">Low-ash, low-moisture industrial steaming coal for power generation and steel mills.</p>
+                <div class="flex items-center gap-4 text-xs text-zinc-400 mb-6">
+                  <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">location_on</span> East Kalimantan, ID</span>
+                  <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">weight</span> 5,000 MT Min.</span>
+                </div>
+              </div>
+              <div class="flex justify-between items-center pt-4 border-t border-zinc-800">
+                <div>
+                  <span class="text-[10px] text-zinc-500 block">FOB KALIMANTAN</span>
+                  <span class="text-primary font-bold text-sm">$115.00 / MT</span>
+                </div>
+                <button data-request-estimate data-product="Thermal Coal (GAR 5800)" data-moq="5000" class="btn-3d px-4 py-2 rounded text-xs">
+                  REQUEST QUOTE
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE SHIPMENT TRACKING LOOKUP TOOL -->
+    <section class="py-20 max-w-7xl mx-auto px-6 md:px-margin">
+      <div class="bg-surface-container p-8 md:p-12 rounded-2xl border border-white/5 beveled-edge relative overflow-hidden">
+        <div class="absolute inset-0 brushed-metal pointer-events-none"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div class="lg:col-span-6">
+            <span class="text-primary font-label-caps text-xs tracking-widest uppercase mb-2 block">TRANSPARENT CHAIN OF CUSTODY</span>
+            <h3 class="text-2xl md:text-3xl font-headline-md font-bold mb-3">Track Active Ocean &amp; Rail Shipments</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Every contract brokered by Nurshah Global comes with satellite AIS tracking, verified Bill of Lading documentation, and digital inspection receipts. Enter a tracking reference below:
+            </p>
+          </div>
+          <div class="lg:col-span-6">
+            <div class="flex flex-col sm:flex-row gap-3">
+              <div class="recessed-input bg-zinc-900/80 rounded-lg flex items-center px-4 py-3 flex-1 border border-white/10">
+                <span class="material-symbols-outlined text-primary text-xl mr-3">qr_code_scanner</span>
+                <input id="tracker-code-input" class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-500 font-mono text-sm uppercase" placeholder="Try: NS-9942 or NS-8820" type="text" value="NS-9942"/>
+              </div>
+              <button id="tracker-search-btn" class="btn-3d px-6 py-3 rounded-lg text-xs uppercase tracking-wider font-bold">
+                TRACK SHIPMENT
+              </button>
+            </div>
+            <div class="flex items-center gap-3 mt-3 text-xs text-zinc-500">
+              <span>Quick tests:</span>
+              <button class="text-primary hover:underline font-mono" onclick="document.getElementById('tracker-code-input').value='NS-9942'; document.getElementById('tracker-search-btn').click();">NS-9942 (Copper)</button>
+              <span>&bull;</span>
+              <button class="text-primary hover:underline font-mono" onclick="document.getElementById('tracker-code-input').value='NS-8820'; document.getElementById('tracker-search-btn').click();">NS-8820 (Iron Ore)</button>
+              <span>&bull;</span>
+              <button class="text-primary hover:underline font-mono" onclick="document.getElementById('tracker-code-input').value='NS-7731'; document.getElementById('tracker-search-btn').click();">NS-7731 (Coal)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="py-24 relative overflow-hidden border-t border-white/5">
+      <div class="absolute inset-0 bg-primary/5"></div>
+      <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-headline-lg font-bold mb-6">
+          Ready to list your products or source raw materials?
+        </h2>
+        <p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto leading-relaxed">
+          Whether you are a mine operator seeking global offtake contracts or an industrial conglomerate securing critical supply lines, we facilitate every step.
+        </p>
+        <div class="flex flex-wrap justify-center gap-5">
+          <a href="estimate.html" class="btn-3d px-10 py-4 rounded-lg font-label-caps text-sm">
+            LIST WITH NURSHAH
+          </a>
+          <a href="contact.html" class="btn-secondary-glow px-10 py-4 rounded-lg text-primary font-label-caps text-sm">
+            SPEAK WITH A BROKER
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ESTIMATE REQUEST MODAL (Matches image.png reference design) -->
+  <div id="estimate-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <div id="modal-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+    <div class="relative z-10 w-full max-w-2xl bg-surface-container rounded-2xl border border-white/10 shadow-2xl p-6 md:p-8 beveled-edge max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between items-center pb-4 border-b border-zinc-800">
+        <div>
+          <h3 class="text-2xl font-bold text-white font-headline-md">Estimate Request Form</h3>
+          <p class="text-xs text-zinc-400 mt-0.5">Submit your requirements to receive a formal CIF/FOB brokerage quote.</p>
+        </div>
+        <button id="modal-close" class="text-zinc-400 hover:text-white p-2 rounded-lg" aria-label="Close dialog">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <form id="estimate-modal-form" class="mt-6 space-y-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div class="space-y-1.5">
+            <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Full Name *</label>
+            <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-center px-3.5 py-2.5">
+              <input id="modal-name" required class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm" placeholder="Johnathan Doe" type="text"/>
+            </div>
+          </div>
+          <div class="space-y-1.5">
+            <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Email Address *</label>
+            <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-center px-3.5 py-2.5">
+              <input id="modal-email" required class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm" placeholder="you@company.com" type="email"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div class="space-y-1.5">
+            <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Company Name</label>
+            <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-center px-3.5 py-2.5">
+              <input id="modal-company" class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm" placeholder="Your Enterprise Ltd" type="text"/>
+            </div>
+          </div>
+          <div class="space-y-1.5">
+            <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Phone / WhatsApp</label>
+            <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-center px-3.5 py-2.5">
+              <input id="modal-phone" class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm" placeholder="+1 234 567 8900" type="tel"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-1.5">
+          <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Product of Interest *</label>
+          <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-center px-3.5 py-2.5">
+            <input id="modal-product" required class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm font-semibold text-primary" placeholder="Iron Ore / Copper / Coal" type="text"/>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div class="space-y-1.5">
+            <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Quantity / Volume *</label>
+            <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-center px-3.5 py-2.5">
+              <input id="modal-volume" required class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm" placeholder="e.g. 500 MT, 20 containers" type="text"/>
+            </div>
+          </div>
+          <div class="space-y-1.5">
+            <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Destination Country / Port *</label>
+            <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-center px-3.5 py-2.5">
+              <input id="modal-port" required class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm" placeholder="e.g. Port of Rotterdam / Qingdao" type="text"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-1.5">
+          <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Additional Specifications &amp; Terms</label>
+          <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-start px-3.5 py-2.5">
+            <textarea id="modal-details" rows="3" class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm" placeholder="Target price, timeline, packaging, inspection requirements (SGS/CCIC)..."></textarea>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-zinc-800 flex items-center justify-end gap-4">
+          <button type="button" onclick="document.getElementById('modal-close').click()" class="text-zinc-400 hover:text-white text-xs font-bold uppercase tracking-wider px-4 py-2">
+            Cancel
+          </button>
+          <button type="submit" class="btn-3d px-8 py-3 rounded-lg text-xs uppercase tracking-wider font-bold flex items-center gap-2">
+            <span>Request Estimate</span>
+            <span class="material-symbols-outlined text-sm">send</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- LIVE SHIPMENT TRACKER MODAL -->
+  <div id="tracker-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <div id="tracker-modal-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+    <div class="relative z-10 w-full max-w-3xl bg-surface-container rounded-2xl border border-white/10 shadow-2xl p-6 md:p-8 beveled-edge max-h-[92vh] overflow-y-auto">
+      <div class="flex justify-between items-start pb-4 border-b border-zinc-800">
+        <div>
+          <div class="flex items-center gap-3">
+            <h3 class="text-2xl font-bold text-white font-headline-md">Live Voyage Telemetry</h3>
+            <span id="trk-id" class="font-mono text-xs font-bold bg-primary/20 text-primary px-2.5 py-0.5 rounded border border-primary/30">NS-9942</span>
+          </div>
+          <p id="trk-commodity" class="text-sm text-zinc-300 font-semibold mt-1">Grade A Copper Cathodes</p>
+        </div>
+        <button id="tracker-modal-close" class="text-zinc-400 hover:text-white p-2 rounded-lg" aria-label="Close dialog">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6">
+        <div class="bg-surface-container-high p-4 rounded-xl border border-white/5">
+          <span class="text-[10px] uppercase font-label-caps text-zinc-500 block">Vessel (IMO)</span>
+          <span id="trk-vessel" class="text-xs font-bold text-white block mt-1">M/V Pacific Sovereign</span>
+        </div>
+        <div class="bg-surface-container-high p-4 rounded-xl border border-white/5">
+          <span class="text-[10px] uppercase font-label-caps text-zinc-500 block">Volume</span>
+          <span id="trk-volume" class="text-xs font-bold text-white block mt-1">2,500 MT</span>
+        </div>
+        <div class="bg-surface-container-high p-4 rounded-xl border border-white/5">
+          <span class="text-[10px] uppercase font-label-caps text-zinc-500 block">Current Status</span>
+          <span id="trk-status" class="text-xs font-bold text-primary block mt-1">In Ocean Transit</span>
+        </div>
+        <div class="bg-surface-container-high p-4 rounded-xl border border-white/5">
+          <span class="text-[10px] uppercase font-label-caps text-zinc-500 block">Estimated Arrival</span>
+          <span id="trk-eta" class="text-xs font-bold text-white block mt-1">Sep 12, 2026</span>
+        </div>
+      </div>
+
+      <div class="bg-zinc-900/90 p-5 rounded-xl border border-zinc-800 mb-6 space-y-3">
+        <div class="flex justify-between text-xs">
+          <span class="text-zinc-400">Route: <strong id="trk-route" class="text-white">Durban &rarr; Rotterdam</strong></span>
+          <span class="text-zinc-400">Satellite Ping: <span id="trk-ping" class="text-primary font-mono">22 mins ago</span></span>
+        </div>
+        <div class="w-full bg-zinc-800 h-2 rounded-full overflow-hidden">
+          <div id="trk-progress-bar" class="bg-gradient-to-r from-amber-500 to-primary h-full rounded-full transition-all duration-500" style="width: 68%;"></div>
+        </div>
+        <div class="flex justify-between text-[11px] text-zinc-500 font-mono">
+          <span>Coordinates: <span id="trk-coords">18&deg;24'N, 28&deg;12'W</span></span>
+          <span class="text-green-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> AIS Active</span>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-xs font-label-caps text-primary uppercase tracking-wider">Milestone Verification Record</h4>
+        <div id="trk-milestones" class="space-y-1"></div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-zinc-800 flex justify-between items-center text-xs">
+        <span class="text-zinc-400">Certification: <strong id="trk-cert" class="text-primary">SGS Verified</strong></span>
+        <button onclick="showToast('Assay Certificate Downloaded', 'SGS Chemical Assay #SGS-LU-88912 saved to local downloads.', 'info')" class="text-primary hover:underline flex items-center gap-1 font-bold">
+          <span class="material-symbols-outlined text-sm">download</span>
+          Download Bill of Lading Preview
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-zinc-950 w-full border-t border-zinc-800 mt-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-12 py-16 max-w-7xl mx-auto">
+      <div class="space-y-5">
+        <div class="text-xl font-bold text-amber-500 font-headline-md tracking-tight">NURSHAH GLOBAL</div>
+        <p class="text-zinc-400 text-sm font-body-md leading-relaxed">
+          A global leader in physical material brokerage and logistics management, headquartered in the heart of international trade. Built on trust, delivered with precision.
+        </p>
+        <div class="flex gap-4 text-zinc-500">
+          <a href="#" class="hover:text-amber-500 transition-colors" title="Global Trade Network"><span class="material-symbols-outlined">public</span></a>
+          <a href="#" class="hover:text-amber-500 transition-colors" title="Partner Exchange"><span class="material-symbols-outlined">partner_exchange</span></a>
+          <a href="#" class="hover:text-amber-500 transition-colors" title="Encrypted Escrow"><span class="material-symbols-outlined">encrypted</span></a>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <div class="text-on-background font-bold font-headline-md text-base mb-2">Executive Inquiries</div>
+        <div class="flex items-center gap-2 text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+          <span class="material-symbols-outlined text-sm text-primary">mail</span>
+          <a href="mailto:admin@nurshah.com">admin@nurshah.com</a>
+        </div>
+        <div class="flex items-center gap-2.5 text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+          <img src="assets/images/founder.jpg" alt="Muhammad Huzaifa Ali" class="w-6 h-6 rounded-full object-cover border border-primary/40 shrink-0"/>
+          <a href="mailto:huzaifaali@nurshah.com">huzaifaali@nurshah.com (CEO Desk)</a>
+        </div>
+        <div class="flex items-center gap-2 text-zinc-400 hover:text-amber-500 transition-colors text-sm">
+          <span class="material-symbols-outlined text-sm text-primary">location_on</span>
+          <span>Global Trade Center, District 1</span>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <div class="text-on-background font-bold font-headline-md text-base mb-2">Platform Navigation</div>
+        <nav class="flex flex-col space-y-2 text-sm text-zinc-400">
+          <a class="hover:text-amber-400 transition-colors" href="index.html">Home Overview</a>
+          <a class="hover:text-amber-400 transition-colors" href="products.html">Industrial Material Catalog</a>
+          <a class="hover:text-amber-400 transition-colors" href="estimate.html">Rate Estimator &amp; Listing Portal</a>
+          <a class="hover:text-amber-400 transition-colors" href="about.html">About &amp; Founder Message</a>
+          <a class="hover:text-amber-400 transition-colors" href="contact.html">Contact HQ &amp; Partnerships</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 md:px-12 pb-8 border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-500 gap-4">
+      <p>&copy; 2024&ndash;2026 Nurshah Global. All Rights Reserved. Brokerage &bull; Logistics &bull; Escrow.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-zinc-300">Terms of Brokerage</a>
+        <a href="#" class="hover:text-zinc-300">Privacy Policy</a>
+        <a href="#" class="hover:text-zinc-300">Institutional Escrow Agreement</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MAIN SCRIPT -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
