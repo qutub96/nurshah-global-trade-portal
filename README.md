@@ -14,7 +14,7 @@ Nurshah Global is an institutional physical commodity brokerage firm specializin
 | **Product Catalog** | [`products.html`](products.html) | 9 physical commodity cards with live category filter pills (Metals, CleanTech, Scrap, Agriculture, Textiles), instant search, specifications, and direct RFQ modal triggers. |
 | **Rate Estimator & Listing** | [`estimate.html`](estimate.html) | Dynamic real-time calculation engine (CIF/FOB/CFR), port freight adjustments, transparent 5% brokerage margin breakdown, and supplier listing manager with `localStorage` persistence. |
 | **About & Founder** | [`about.html`](about.html) | Company ethos, spotlight on Founder & CEO Muhammad Huzaifa Ali, authentic signature, and 4-step interactive shipment lifecycle flow. |
-| **Contact HQ** | [`contact.html`](contact.html) | Direct desks (`admin@nurshah.com`, `huzaifaali@nurshah.com`), instant WhatsApp hotline, formal correspondence form with validation, and global trade route map. |
+| **Contact HQ** | [`contact.html`](contact.html) | Direct desks (`info@nurshahexports.com`, `huzaifaali@nurshahexports.com`), instant WhatsApp hotline, formal correspondence form with validation, and global trade route map. |
 
 ---
 

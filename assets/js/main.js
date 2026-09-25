@@ -15,6 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
 });
 
+/**
+ * Safe HTML escaping utility to prevent XSS
+ */
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 /* ==========================================================================
    1. TOAST NOTIFICATION SYSTEM
    ========================================================================== */
@@ -32,16 +45,35 @@ function showToast(title, message, type = 'gold') {
   const iconName = type === 'success' ? 'check_circle' : type === 'info' ? 'info' : 'verified';
   const iconColor = type === 'success' ? 'text-green-400' : 'text-primary';
 
-  toast.innerHTML = `
-    <span class="material-symbols-outlined ${iconColor} text-2xl mt-0.5">${iconName}</span>
-    <div class="flex-1">
-      <div class="font-bold text-sm text-white">${title}</div>
-      <div class="text-xs text-zinc-400 mt-0.5">${message}</div>
-    </div>
-    <button class="text-zinc-500 hover:text-white text-sm" onclick="this.parentElement.remove()">
-      <span class="material-symbols-outlined text-sm">close</span>
-    </button>
-  `;
+  const icon = document.createElement('span');
+  icon.className = `material-symbols-outlined ${iconColor} text-2xl mt-0.5`;
+  icon.textContent = iconName;
+
+  const content = document.createElement('div');
+  content.className = 'flex-1';
+
+  const titleEl = document.createElement('div');
+  titleEl.className = 'font-bold text-sm text-white';
+  titleEl.textContent = title;
+
+  const msgEl = document.createElement('div');
+  msgEl.className = 'text-xs text-zinc-400 mt-0.5';
+  msgEl.textContent = message;
+
+  content.appendChild(titleEl);
+  content.appendChild(msgEl);
+
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'text-zinc-500 hover:text-white text-sm';
+  closeBtn.onclick = () => toast.remove();
+  const closeIcon = document.createElement('span');
+  closeIcon.className = 'material-symbols-outlined text-sm';
+  closeIcon.textContent = 'close';
+  closeBtn.appendChild(closeIcon);
+
+  toast.appendChild(icon);
+  toast.appendChild(content);
+  toast.appendChild(closeBtn);
 
   container.appendChild(toast);
 
@@ -553,25 +585,42 @@ function initListingSubmission() {
       return;
     }
 
-    submissionsContainer.innerHTML = listings.map(l => `
+    submissionsContainer.innerHTML = listings.map(l => {
+      const safeId = escapeHtml(l.id);
+      const safeStatus = escapeHtml(l.status);
+      const safeDate = escapeHtml(new Date(l.createdAt).toLocaleDateString());
+      const safeMaterial = escapeHtml(l.materialName);
+      const safeVolume = escapeHtml(l.volume);
+      const safePort = escapeHtml(l.port);
+      const safeCompany = escapeHtml(l.company);
+
+      return `
       <div class="p-6 bg-surface-container-high rounded-xl border border-white/5 flex flex-col md:flex-row justify-between md:items-center gap-4">
         <div>
           <div class="flex items-center gap-3 mb-1">
-            <span class="text-xs font-mono font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">${l.id}</span>
-            <span class="text-xs font-bold text-amber-400 border border-amber-500/30 px-2 py-0.5 rounded-full">${l.status}</span>
-            <span class="text-xs text-zinc-500">${new Date(l.createdAt).toLocaleDateString()}</span>
+            <span class="text-xs font-mono font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">${safeId}</span>
+            <span class="text-xs font-bold text-amber-400 border border-amber-500/30 px-2 py-0.5 rounded-full">${safeStatus}</span>
+            <span class="text-xs text-zinc-500">${safeDate}</span>
           </div>
-          <h4 class="font-bold text-white text-base">${l.materialName}</h4>
-          <p class="text-xs text-zinc-400 mt-1">${l.volume} MT • Destination: ${l.port} • Origin: ${l.company}</p>
+          <h4 class="font-bold text-white text-base">${safeMaterial}</h4>
+          <p class="text-xs text-zinc-400 mt-1">${safeVolume} MT • Destination: ${safePort} • Origin: ${safeCompany}</p>
         </div>
         <div class="flex items-center gap-3">
           <span class="text-xs text-zinc-400">Assigned Broker: <strong class="text-zinc-200">Muhammad H. Ali</strong></span>
-          <button class="text-xs text-primary hover:underline" onclick="showToast('Broker Notified', 'Broker desk alerted for listing ${l.id}', 'info')">
+          <button class="text-xs text-primary hover:underline" data-status-btn="${safeId}">
             Check Status
           </button>
         </div>
       </div>
-    `).join('');
+    `;
+    }).join('');
+
+    submissionsContainer.querySelectorAll('[data-status-btn]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-status-btn');
+        showToast('Broker Notified', `Broker desk alerted for listing ${id}`, 'info');
+      });
+    });
   };
 
   form.addEventListener('submit', (e) => {

@@ -1,3 +1,18 @@
+# Environment & Secrets
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.cert
+*.crt
+id_rsa
+id_ed25519
+
+# Deployments & Cloud
+.vercel
+.output/
+
 # Dependencies
 node_modules/
 npm-debug.log*
