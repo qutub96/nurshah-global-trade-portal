@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nurshahexports.com/sitemap.xml
+Sitemap: https://www.nurshahexports.com/sitemap.xml
