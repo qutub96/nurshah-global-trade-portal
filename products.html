@@ -1,703 +1,757 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Industrial Material Portfolio | Nurshah Global Commodity Brokerage</title>
-  <meta name="description" content="Browse physical commodities across metals, minerals, energy, agriculture, and clean tech. Request instant estimates and formal brokerage quotes."/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Industrial Material Portfolio | Nurshah Exports Commodity Brokerage</title>
+    <meta name="description" content="Browse physical commodities across metals, minerals, energy, agriculture, and clean tech. Request instant estimates and formal brokerage quotes." />
 
-  <!-- Tailwind CSS with Forms and Container Queries -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "surface": "#131313",
-            "surface-dim": "#131313",
-            "surface-bright": "#393939",
-            "surface-container-lowest": "#0e0e0e",
-            "surface-container-low": "#1c1b1b",
-            "surface-container": "#201f1f",
-            "surface-container-high": "#2a2a2a",
-            "surface-container-highest": "#353534",
-            "on-surface": "#e5e2e1",
-            "on-surface-variant": "#d0c5af",
-            "primary": "#f2ca50",
-            "on-primary": "#3c2f00",
-            "primary-container": "#d4af37",
-            "on-primary-container": "#554300",
-            "secondary": "#ffe2ab",
-            "outline": "#99907c",
-            "outline-variant": "#4d4635",
-            "background": "#131313",
-            "on-background": "#e5e2e1"
-          },
-          fontFamily: {
-            "headline-lg": ["Noto Serif", "serif"],
-            "headline-md": ["Noto Serif", "serif"],
-            "headline-sm": ["Noto Serif", "serif"],
-            "body-lg": ["Manrope", "sans-serif"],
-            "body-md": ["Manrope", "sans-serif"],
-            "label-caps": ["Manrope", "sans-serif"]
-          },
-          spacing: {
-            margin: "48px",
-            gutter: "24px",
-            "container-max": "1280px"
-          }
-        }
-      }
-    };
-  </script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#FBF3E7",
+                        "surface-dim": "#F3DEB8",
+                        "surface-bright": "#FFFFFF",
+                        "surface-container-lowest": "#FFFFFF",
+                        "surface-container-low": "#FBF3E7",
+                        "surface-container": "#F8E7C9",
+                        "surface-container-high": "#F0DCB8",
+                        "surface-container-highest": "#E8D0A0",
+                        "on-surface": "#1C2B24",
+                        "on-surface-variant": "#3F5C4E",
+                        "primary": "#064E3B",
+                        "on-primary": "#F8E7C9",
+                        "primary-container": "#0E7C5A",
+                        "on-primary-container": "#F8E7C9",
+                        "secondary": "#0E7C5A",
+                        "outline": "#8A7A52",
+                        "outline-variant": "#E4D2A8",
+                        "background": "#FDF8F0",
+                        "on-background": "#1C2B24"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Noto Serif", "serif"],
+                        "headline-md": ["Noto Serif", "serif"],
+                        "headline-sm": ["Noto Serif", "serif"],
+                        "body-lg": ["Manrope", "sans-serif"],
+                        "body-md": ["Manrope", "sans-serif"],
+                        "label-caps": ["Manrope", "sans-serif"]
+                    },
+                    spacing: { margin: "48px", gutter: "24px", "container-max": "1280px" }
+                }
+            }
+        };
+    </script>
 
-  <!-- Custom Tactile Modernist Styles -->
-  <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" href="assets/images/logo-1.jpeg" />
+    <link rel="apple-touch-icon" href="assets/images/logo-1.jpeg" />
 </head>
 
 <body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
 
-  <!-- TOP APP BAR / HEADER -->
-  <header class="fixed top-0 w-full z-50 border-b border-zinc-800 bg-zinc-950/95 backdrop-blur-md shadow-[0_1px_0_0_rgba(255,255,255,0.05)_inset,0_4px_20px_rgba(0,0,0,0.5)]">
-    <nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto w-full">
-      <div class="flex items-center gap-4">
-        <button data-menu-toggle class="text-amber-500 hover:bg-white/5 p-2 rounded-lg transition-colors md:hidden focus:outline-none" aria-label="Open Menu">
-          <span class="material-symbols-outlined">menu</span>
-        </button>
-        <a href="index.html" class="text-2xl font-bold text-amber-500 uppercase tracking-tighter shadow-sm font-headline-md flex items-center gap-2">
-          <span>Nurshah Global</span>
-        </a>
-      </div>
-
-      <div class="hidden md:flex items-center space-x-8">
-        <a class="text-zinc-400 hover:text-zinc-100 transition-colors font-headline-md font-semibold tracking-wide" href="index.html">Home</a>
-        <a class="text-amber-500 border-b-2 border-amber-500 pb-1 font-headline-md font-semibold tracking-wide" href="products.html">Products</a>
-        <a class="text-zinc-400 hover:text-zinc-100 transition-colors font-headline-md font-semibold tracking-wide" href="estimate.html">Rate Estimator</a>
-        <a class="text-zinc-400 hover:text-zinc-100 transition-colors font-headline-md font-semibold tracking-wide" href="about.html">About &amp; Founder</a>
-        <a class="text-zinc-400 hover:text-zinc-100 transition-colors font-headline-md font-semibold tracking-wide" href="contact.html">Contact</a>
-      </div>
-
-      <div class="flex items-center gap-3">
-        <a href="estimate.html" class="btn-3d px-5 py-2.5 rounded-lg text-xs uppercase tracking-wider font-bold">
-          List Product
-        </a>
-      </div>
-    </nav>
-
-    <!-- LIVE COMMODITY SPOT TICKER BAR -->
-    <div class="border-t border-zinc-800/80 bg-zinc-950/90 py-1.5 overflow-hidden relative">
-      <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-zinc-950 to-transparent z-10 pointer-events-none"></div>
-      <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-zinc-950 to-transparent z-10 pointer-events-none"></div>
-      <div class="flex items-center">
-        <span class="pl-6 pr-3 text-[10px] font-bold text-primary tracking-wider uppercase whitespace-nowrap flex items-center gap-1">
-          <span class="w-2 h-2 rounded-full bg-primary animate-ping inline-block"></span>
-          SPOT FEEDS:
-        </span>
-        <div class="overflow-hidden flex-1">
-          <div id="ticker-track" class="ticker-track"></div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- MOBILE NAVIGATION DRAWER -->
-  <div id="drawer-overlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity"></div>
-  <aside id="mobile-drawer" class="fixed top-0 right-0 w-80 max-w-full h-full bg-zinc-950 border-l border-zinc-800 z-50 translate-x-full transition-transform duration-300 flex flex-col p-6 shadow-2xl">
-    <div class="flex items-center justify-between pb-6 border-b border-zinc-800">
-      <div class="text-xl font-bold text-amber-500 font-headline-md">NURSHAH GLOBAL</div>
-      <button id="drawer-close" class="text-zinc-400 hover:text-white p-2 rounded-lg" aria-label="Close Menu">
-        <span class="material-symbols-outlined">close</span>
-      </button>
-    </div>
-
-    <nav class="flex flex-col space-y-5 py-8 text-base font-semibold">
-      <a href="index.html" class="text-zinc-300 hover:text-white flex items-center justify-between">
-        <span>Home</span>
-        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-      </a>
-      <a href="products.html" class="text-amber-500 flex items-center justify-between">
-        <span>Products Catalog</span>
-        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-      </a>
-      <a href="estimate.html" class="text-zinc-300 hover:text-white flex items-center justify-between">
-        <span>Rate Estimator &amp; Listing</span>
-        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-      </a>
-      <a href="about.html" class="text-zinc-300 hover:text-white flex items-center justify-between">
-        <span>About &amp; Founder</span>
-        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-      </a>
-      <a href="contact.html" class="text-zinc-300 hover:text-white flex items-center justify-between">
-        <span>Contact HQ</span>
-        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-      </a>
-    </nav>
-
-    <div class="mt-auto pt-6 border-t border-zinc-800 space-y-4">
-      <a href="estimate.html" class="btn-3d w-full py-3 rounded-lg text-center text-xs uppercase tracking-wider block">
-        List Your Product
-      </a>
-    </div>
-  </aside>
-
-  <!-- MAIN CATALOG CONTENT -->
-  <main class="pt-32 pb-24 px-6 md:px-margin max-w-7xl mx-auto flex-1 w-full">
-    
-    <!-- PAGE TITLE -->
-    <div class="mb-12">
-      <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-3.5 py-1 rounded-full text-primary font-label-caps text-xs tracking-widest mb-4">
-        VERIFIED INDUSTRIAL COMMODITIES
-      </div>
-      <h1 class="font-headline-lg text-4xl sm:text-5xl text-primary mb-4 font-bold">Industrial Material Portfolio</h1>
-      <p class="font-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
-        Source high-grade physical commodities, processed metals, agricultural resources, and renewable energy infrastructure through our globally vetted network. Built on trust, delivered with maritime precision.
-      </p>
-    </div>
-
-    <!-- FILTER & SEARCH CONTROL BAR -->
-    <div class="bg-surface-container-low p-5 rounded-xl border border-white/5 beveled-edge mb-10 flex flex-col lg:flex-row justify-between items-stretch lg:items-center gap-4">
-      <!-- Search Input -->
-      <div class="recessed-input bg-zinc-900/90 rounded-lg flex items-center px-4 py-2.5 w-full lg:w-80 border border-white/10">
-        <span class="material-symbols-outlined text-primary text-lg mr-2.5">search</span>
-        <input id="catalog-search" type="text" placeholder="Search commodity name, grade, origin..." class="bg-transparent border-none focus:ring-0 w-full text-sm text-white placeholder-zinc-500"/>
-      </div>
-
-      <!-- Category Filter Pills -->
-      <div class="flex flex-wrap gap-2 items-center">
-        <button data-category-filter="all" class="px-4 py-2 rounded-lg text-xs font-bold font-label-caps uppercase transition-all bg-primary text-on-primary border border-primary">
-          All Materials
-        </button>
-        <button data-category-filter="metals" class="px-4 py-2 rounded-lg text-xs font-bold font-label-caps uppercase transition-all bg-surface-container text-zinc-400 border border-white/5 hover:text-white">
-          Metals &amp; Ores
-        </button>
-        <button data-category-filter="energy" class="px-4 py-2 rounded-lg text-xs font-bold font-label-caps uppercase transition-all bg-surface-container text-zinc-400 border border-white/5 hover:text-white">
-          CleanTech &amp; Energy
-        </button>
-        <button data-category-filter="recycled" class="px-4 py-2 rounded-lg text-xs font-bold font-label-caps uppercase transition-all bg-surface-container text-zinc-400 border border-white/5 hover:text-white">
-          Recycled Scrap
-        </button>
-        <button data-category-filter="agriculture" class="px-4 py-2 rounded-lg text-xs font-bold font-label-caps uppercase transition-all bg-surface-container text-zinc-400 border border-white/5 hover:text-white">
-          Agriculture
-        </button>
-        <button data-category-filter="textiles" class="px-4 py-2 rounded-lg text-xs font-bold font-label-caps uppercase transition-all bg-surface-container text-zinc-400 border border-white/5 hover:text-white">
-          Textiles
-        </button>
-      </div>
-
-      <!-- Results Count Indicator -->
-      <span id="catalog-count" class="text-xs text-zinc-500 self-center font-mono">
-        9 commodities displayed
-      </span>
-    </div>
-
-    <!-- COMMODITY BENTO GRID -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-
-      <!-- Product 1: Iron Ore -->
-      <div data-product-card data-category="metals" data-name="Iron Ore (62% Fe Fine Magnetite Hematite)" class="group relative bg-surface-container-low border border-zinc-800 rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
-        <div class="aspect-video relative overflow-hidden">
-          <img alt="Iron Ore" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB756bLiFLWrZS3k80-WvNEPw1R6LWYqJq4ygeeUMDmvPBFg2F3zkIU7mKazIDVuXZp9_iNIhredY3Ud2xQoCorKxAtMxqMWZyiWICA_rrg_wj6nWn_9dtDErKAv58BFXTGdlhIhBSn1X9pm48dvRVtMd5q6IV3u846r4GsivQIJE5WUEOVQW_nyleLV0b27skBtNzP1QwZM2YjXxC7Iy1PLQ7g7kb-EkKKsj-TeLSMIeUoumua2fjFeNOsAKiw7XsqWNJ_BZ9eD7fP"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-          <span class="absolute top-3 right-3 bg-zinc-950/85 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-primary border border-primary/20">
-            62% Fe Content
-          </span>
-        </div>
-        <div class="p-6 flex-1 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Metals &amp; Ores</span>
-            <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Iron Ore (Fine &amp; Lump)</h3>
-            <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">High-purity magnetite and hematite sourced from Tier-1 mining jurisdictions in Australia and Brazil.</p>
-            <div class="text-xs text-zinc-500 space-y-1 mb-6">
-              <p><strong class="text-zinc-400">Origin:</strong> Port Hedland (AU) / Tubar&atilde;o (BR)</p>
-              <p><strong class="text-zinc-400">Min Order:</strong> 10,000 MT Bulk Vessel</p>
-              <p><strong class="text-zinc-400">Incoterms:</strong> CFR Qingdao, FOB Santos</p>
+    <header class="fixed top-0 w-full z-50 border-b border-outline-variant bg-surface-bright/95 backdrop-blur-md shadow-[0_1px_0_0_rgba(255,255,255,0.6)_inset,0_4px_20px_rgba(6,78,59,0.07)]">
+        <nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto w-full">
+            <div class="flex items-center gap-4">
+                <button data-menu-toggle class="text-primary hover:bg-primary/5 p-2 rounded-lg transition-colors md:hidden focus:outline-none" aria-label="Open Menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <a href="index.html" class="flex items-center gap-2.5 shadow-sm">
+                    <img src="assets/images/logo-1.jpeg" alt="Nurshah Exports" class="h-10 w-auto" />
+                    <span class="text-xl font-bold text-primary uppercase tracking-tighter font-headline-md">Nurshah Exports</span>
+                </a>
             </div>
-          </div>
-          <button data-request-estimate data-product="62% Fe Fine Iron Ore" data-moq="10000" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
-            <span>Request Estimate</span>
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
-        </div>
-      </div>
 
-      <!-- Product 2: Copper Cathodes -->
-      <div data-product-card data-category="metals" data-name="Grade A Copper Cathodes Electrolytic 99.99%" class="group relative bg-surface-container-low border border-zinc-800 rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
-        <div class="aspect-video relative overflow-hidden">
-          <img alt="Copper Cathodes" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKwtzrvgtPkxzx2xVWwPfPuErwdYaPB8LMvYJGJKamgFjjxtyb2topRlInf2noTnG0xqXZJte_yAWxajEjKPP-A-r_-j3jbrr-glxi4jQZ-NWPNuzzwkf2B1M6PSiJEnuHD7WzKRrwYMY4KejjEoCd-SVtUjSSzU7BEucSYLIlpiYEsdd_-dwisszKonKhPvcMnJuH3GoKxZjMUennGX_t1E1wscYWqvW3xdf1hOL7HIDiDu-n_igSeLmjntgDJ3Pl3Q5bwbPCH_iL"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-          <span class="absolute top-3 right-3 bg-zinc-950/85 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-primary border border-primary/20">
-            99.99% Purity
-          </span>
-        </div>
-        <div class="p-6 flex-1 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Metals &amp; Ores</span>
-            <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Grade A Copper Cathodes</h3>
-            <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Electrolytic grade A cathode sheets conforming to BS EN 1978:1998 standards for wire rod and copper tube manufacturing.</p>
-            <div class="text-xs text-zinc-500 space-y-1 mb-6">
-              <p><strong class="text-zinc-400">Origin:</strong> Democratic Republic of Congo / Zambia</p>
-              <p><strong class="text-zinc-400">Min Order:</strong> 500 MT Containerized</p>
-              <p><strong class="text-zinc-400">Incoterms:</strong> CIF Rotterdam, CIF Qingdao</p>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-on-surface-variant hover:text-on-surface transition-colors font-headline-md font-semibold tracking-wide" href="index.html">Home</a>
+                <a class="text-primary border-b-2 border-primary pb-1 font-headline-md font-semibold tracking-wide" href="products.html">Products</a>
+                <a class="text-on-surface-variant hover:text-on-surface transition-colors font-headline-md font-semibold tracking-wide" href="estimate.html">Rate Estimator</a>
+                <a class="text-on-surface-variant hover:text-on-surface transition-colors font-headline-md font-semibold tracking-wide" href="about.html">About &amp; Founder</a>
+                <a class="text-on-surface-variant hover:text-on-surface transition-colors font-headline-md font-semibold tracking-wide" href="contact.html">Contact</a>
             </div>
-          </div>
-          <button data-request-estimate data-product="Grade A Copper Cathodes" data-moq="500" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
-            <span>Request Estimate</span>
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
-        </div>
-      </div>
 
-      <!-- Product 3: Metal Scrap -->
-      <div data-product-card data-category="recycled" data-name="Metal Scrap HMS 1&2 Heavy Melting Steel Shredded" class="group relative bg-surface-container-low border border-zinc-800 rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
-        <div class="aspect-video relative overflow-hidden">
-          <img alt="Metal Scrap" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaiVkabcdm31JiGP9vId7rjim2_kSkWfI96hORFhrp8gyvi5yasWr7S4EDySov5CiAiFraGSDIDAGidRlB2doeyaLl-dQCnL1VGx5D6QKaO-t7xK-WkCsAnRMtilB3rDth05X0TvvQTyDpGnwk9mQ7ahLkPb2m-rCCnSPNhJCd6kFCbFVT7ZmFrg2SaPBSYXocLHMPUZHX0La-ao2qT1fZGidRAyHnwg7ZaZK3_Iia9WHjCkLW6zzHJAHf_XNT49dw2hrBjls6nMDQ"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-          <span class="absolute top-3 right-3 bg-zinc-950/85 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-primary border border-primary/20">
-            ISRI 200-206
-          </span>
-        </div>
-        <div class="p-6 flex-1 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Recycled Assets</span>
-            <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Heavy Melting Steel Scrap (HMS 1&amp;2)</h3>
-            <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">HMS 80:20 blend and shredded steel scrap prepared specifically for electric arc furnace charging.</p>
-            <div class="text-xs text-zinc-500 space-y-1 mb-6">
-              <p><strong class="text-zinc-400">Origin:</strong> North America / Northern Europe</p>
-              <p><strong class="text-zinc-400">Min Order:</strong> 1,000 MT</p>
-              <p><strong class="text-zinc-400">Incoterms:</strong> CFR Aliaga, CFR Nhava Sheva</p>
+            <div class="flex items-center gap-3">
+                <a href="estimate.html" class="btn-3d px-5 py-2.5 rounded-lg text-xs uppercase tracking-wider font-bold">
+                    List Product
+                </a>
             </div>
-          </div>
-          <button data-request-estimate data-product="Metal Scrap (HMS 1&2)" data-moq="1000" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
-            <span>Request Estimate</span>
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Product 4: Thermal Coal -->
-      <div data-product-card data-category="metals" data-name="Thermal Coal GAR 5800 Industrial Energy" class="group relative bg-surface-container-low border border-zinc-800 rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
-        <div class="aspect-video relative overflow-hidden">
-          <img alt="Thermal Coal" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAudioHyhv50qkZnwv28yqgO-dtOmXDCsXmKjEx8bpRsF35njY0eSXW-PVgkppxcQcDXXxGygbYWxIP5COlXFidIoG-Obun6OYPQTTF2dDK2yaGLs8SkO0EZPRgOc5uG9pl09sLdSepiC9cPVRq6wW6jOwV8LwuLyKVBmgdcAvR24eazrN9myBMteStemWBCDfHL6UDr0vhDqAGXNC8uqH4hF1D3Lql_HkvHmNg-92CM_4yNPkRzvnkSf4K5jhibmCpGyYq44v6E5Yk"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-          <span class="absolute top-3 right-3 bg-zinc-950/85 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-primary border border-primary/20">
-            GAR 5800 kcal/kg
-          </span>
-        </div>
-        <div class="p-6 flex-1 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Metals &amp; Energy</span>
-            <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Thermal Coal (GAR 5800)</h3>
-            <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Low-sulfur, low-ash thermal steaming coal suitable for utility boilers, cement kilns, and metallurgical power plants.</p>
-            <div class="text-xs text-zinc-500 space-y-1 mb-6">
-              <p><strong class="text-zinc-400">Origin:</strong> East Kalimantan (Indonesia)</p>
-              <p><strong class="text-zinc-400">Min Order:</strong> 5,000 MT (Barge/Vessel)</p>
-              <p><strong class="text-zinc-400">Incoterms:</strong> FOB Taboneo, CIF Mundra</p>
-            </div>
-          </div>
-          <button data-request-estimate data-product="Thermal Coal (GAR 5800)" data-moq="5000" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
-            <span>Request Estimate</span>
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Product 5: Cotton Yarn -->
-      <div data-product-card data-category="textiles" data-name="Cotton Yarn 30s 40s Combed Weaving Knitting" class="group relative bg-surface-container-low border border-zinc-800 rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
-        <div class="aspect-video relative overflow-hidden">
-          <img alt="Cotton Yarn" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANHuLOQsWZbfuclzG-DCxd-o9a0T_Oj1wn_yJyxvh2zBOJkJXr7nypeol-c3OcRP-rvEGc2BVZlskhEjmSbJb_YLPqXfaBdaZ59jRVlspkSp3dmZhBBH55HT4QE1_2m5AzcWsZF5uhOpO6bLhpm2wslLg54STdd6lTdqbMCudO8x5stGUXWlevmpoDhUtLsHBUzNn1g67uCc6NoIetZk4oxJu4GaSY8EZA4X5_xm80oXG-EOk7TmEu6JYl2m6F0vfnOSacsnHzsx_t"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-          <span class="absolute top-3 right-3 bg-zinc-950/85 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-primary border border-primary/20">
-            OEKO-TEX 100
-          </span>
-        </div>
-        <div class="p-6 flex-1 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Textiles</span>
-            <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Combed Cotton Yarn (30s/40s)</h3>
-            <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Premium ring-spun 100% cotton yarns engineered for circular knitting and high-speed air-jet weaving looms.</p>
-            <div class="text-xs text-zinc-500 space-y-1 mb-6">
-              <p><strong class="text-zinc-400">Origin:</strong> Pakistan / India / Uzbekistan</p>
-              <p><strong class="text-zinc-400">Min Order:</strong> 200 MT (40ft HQ Containers)</p>
-              <p><strong class="text-zinc-400">Incoterms:</strong> CIF Mersin, CIF Chittagong</p>
-            </div>
-          </div>
-          <button data-request-estimate data-product="Cotton Yarn (30s Combed)" data-moq="200" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
-            <span>Request Estimate</span>
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Product 6: Wind Turbines -->
-      <div data-product-card data-category="energy" data-name="Wind Turbines Utility Scale Nacelles CleanTech" class="group relative bg-surface-container-low border border-zinc-800 rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
-        <div class="aspect-video relative overflow-hidden">
-          <img alt="Wind Turbines" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCclsfsgefS0oSs9epgjrMYYRKE8DuoBSG9yQGrQ8FYm8BSZRXc6doJ2PVghnGeA_z1qMhf7W40HSuzTGH2CYoigbvbWCxFEUnGf-aoPY1HUyHYQ8lL4FtyDDwUE9rXiHsTnelK1V00UKPw2h_m3g4gMRg8LRzz2whse9fIjTVDE3XbNoRi_qzl4XnBlB5PV8QKWRGCWbqD3-GmSY2oKLc87MOD-QeeXH4nD5gQC-dLnUXovjlEYsjZTKlot1NK2mDVyZJHbVFiEyQz"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-          <span class="absolute top-3 right-3 bg-zinc-950/85 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-primary border border-primary/20">
-            3.5MW - 5.0MW
-          </span>
-        </div>
-        <div class="p-6 flex-1 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Renewable Energy</span>
-            <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Utility-Scale Wind Turbines</h3>
-            <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Complete nacelle assemblies, direct-drive generator units, and composite rotor blades for onshore and offshore wind farms.</p>
-            <div class="text-xs text-zinc-500 space-y-1 mb-6">
-              <p><strong class="text-zinc-400">Origin:</strong> Germany / Spain / Denmark</p>
-              <p><strong class="text-zinc-400">Min Order:</strong> 2 Units (Heavy Lift Vessel)</p>
-              <p><strong class="text-zinc-400">Incoterms:</strong> CIF Port of Houston, DDP Site</p>
-            </div>
-          </div>
-          <button data-request-estimate data-product="Wind Turbine Nacelles (3.5MW)" data-moq="2" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
-            <span>Request Estimate</span>
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Product 7: Rock Phosphate -->
-      <div data-product-card data-category="agriculture" data-name="Rock Phosphate DAP Fertilizers Agriculture" class="group relative bg-surface-container-low border border-zinc-800 rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
-        <div class="aspect-video relative overflow-hidden">
-          <img alt="Phosphate" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgaeDZ4ulFm81xUrp2JPZxx3gR2SMEdf0RbQb-sHZZyO5rJZLdzL-yhAfBu2d70P4vkBpYbHycprKVO9xQLM7aPiKQWGDCcwSpmbtu99ym9y0ktbCGN1SOQ5msgLlm89zDUBrNv894OahGqNnLVuOoRfTlBvE6JOf3oQUOPZlkKnV0k3Y0lOXjwZ38G1Sk-rrPhmj92-rx1dHVY4ExTghMA_fNC-651OnSTZWimTSg-y6R1SzRYNfeZje2eeWUPyXrxEhvKz4J0NUC"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-          <span class="absolute top-3 right-3 bg-zinc-950/85 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-primary border border-primary/20">
-            30%-32% P2O5
-          </span>
-        </div>
-        <div class="p-6 flex-1 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Agriculture</span>
-            <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">High-Grade Rock Phosphate</h3>
-            <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Direct sedimentary phosphate rock and diammonium phosphate (DAP) for global agronomy and chemical synthesis.</p>
-            <div class="text-xs text-zinc-500 space-y-1 mb-6">
-              <p><strong class="text-zinc-400">Origin:</strong> Morocco / Jordan / Egypt</p>
-              <p><strong class="text-zinc-400">Min Order:</strong> 2,000 MT</p>
-              <p><strong class="text-zinc-400">Incoterms:</strong> FOB Casablanca, CIF Santos</p>
-            </div>
-          </div>
-          <button data-request-estimate data-product="High-Grade Rock Phosphate" data-moq="2000" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
-            <span>Request Estimate</span>
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Product 8: Solar Panels -->
-      <div data-product-card data-category="energy" data-name="Solar Panels Monocrystalline PERC Photovoltaic CleanTech" class="group relative bg-surface-container-low border border-zinc-800 rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
-        <div class="aspect-video relative overflow-hidden">
-          <img alt="Solar Panels" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuVLOQ2yWHYxs-eNRIxoMEQqixZyEa5Ee3fraFXHcKV-TS57-D-mFy6fzC8O71haCRLNz495kZcHUS11Rn39c4jgHy6PZ5zJNA2SP2If4euyZY1uthoV0gaO_M7UcsXZdJckGSCS3XdmXcbWW3i4eKHkQfHJ2MkDMV6kjw7UhJnAG_fgvhSZjW68NIJqv_lv-TFJdUoHGD9twZP0FT8ZCubUy4plwWbitoalug3WjHHlchfs42fd9MjyrFGbp5jubmGDwaladyJpvy"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-          <span class="absolute top-3 right-3 bg-zinc-950/85 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-primary border border-primary/20">
-            550W Tier-1
-          </span>
-        </div>
-        <div class="p-6 flex-1 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Renewable Energy</span>
-            <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Monocrystalline Solar Modules</h3>
-            <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Bifacial dual-glass solar panels with 21.6% module conversion efficiency designed for utility ground installations.</p>
-            <div class="text-xs text-zinc-500 space-y-1 mb-6">
-              <p><strong class="text-zinc-400">Origin:</strong> Vietnam / Malaysia / South Korea</p>
-              <p><strong class="text-zinc-400">Min Order:</strong> 500 Modules (1 MW)</p>
-              <p><strong class="text-zinc-400">Incoterms:</strong> CIF Hamburg, CIF Long Beach</p>
-            </div>
-          </div>
-          <button data-request-estimate data-product="Solar Panels (550W Monocrystalline)" data-moq="500" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
-            <span>Request Estimate</span>
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Product 9: Primary Aluminum Ingots -->
-      <div data-product-card data-category="metals" data-name="Aluminum Ingots P1020 99.7% Smelter Grade" class="group relative bg-surface-container-low border border-zinc-800 rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
-        <div class="aspect-video relative overflow-hidden bg-zinc-900 flex items-center justify-center">
-          <span class="material-symbols-outlined text-primary text-6xl opacity-40">layers</span>
-          <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-40"></div>
-          <span class="absolute top-3 right-3 bg-zinc-950/85 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-primary border border-primary/20">
-            99.7% Al (P1020A)
-          </span>
-        </div>
-        <div class="p-6 flex-1 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Metals &amp; Ores</span>
-            <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Primary Aluminum Ingots (P1020A)</h3>
-            <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Standard high-purity smelter ingots conforming to LME delivery specifications for automotive casting and extrusions.</p>
-            <div class="text-xs text-zinc-500 space-y-1 mb-6">
-              <p><strong class="text-zinc-400">Origin:</strong> UAE / Bahrain / Canada</p>
-              <p><strong class="text-zinc-400">Min Order:</strong> 300 MT</p>
-              <p><strong class="text-zinc-400">Incoterms:</strong> CIF Port Klang, FOB Jebel Ali</p>
-            </div>
-          </div>
-          <button data-request-estimate data-product="Aluminum Ingots (P1020)" data-moq="300" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
-            <span>Request Estimate</span>
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- SUPPLY CHAIN MARITIME FLOW COMPONENT -->
-    <section class="mt-24 p-8 md:p-12 bg-surface-container rounded-2xl border border-white/5 beveled-edge relative overflow-hidden">
-      <div class="absolute inset-0 brushed-metal pointer-events-none"></div>
-      <div class="max-w-4xl mx-auto text-center relative z-10">
-        <span class="text-primary font-label-caps text-xs tracking-widest uppercase mb-2 block">MARITIME CORRIDOR STATUS</span>
-        <h2 class="text-2xl md:text-3xl font-headline-md font-bold mb-4">Active Global Trade Corridors</h2>
-        <p class="text-sm text-on-surface-variant mb-12 max-w-2xl mx-auto leading-relaxed">
-          Real-time movement of active raw material contracts brokered by Nurshah Global. Our proprietary logistics dispatch links mines to discharging terminals seamlessly.
-        </p>
-
-        <!-- Route Nodes -->
-        <div class="relative flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4 my-8">
-          <!-- Route Line -->
-          <div class="hidden md:block absolute top-6 left-12 right-12 h-[2px] bg-zinc-800 -z-0"></div>
-          <div class="hidden md:block absolute top-6 left-12 w-2/3 h-[2px] bg-gradient-to-r from-primary to-amber-400 -z-0 shadow-[0_0_10px_#f2ca50]"></div>
-
-          <!-- Node 1 -->
-          <div class="flex flex-col items-center gap-2 z-10 group cursor-pointer" onclick="showToast('Port of Santos (BR)', 'Loading terminal for 50,000 MT bulk iron ore fines.', 'info')">
-            <div class="w-12 h-12 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center shadow-[0_0_15px_rgba(242,202,80,0.5)]">
-              <span class="material-symbols-outlined text-xl">anchor</span>
-            </div>
-            <span class="text-xs font-bold text-white uppercase tracking-wider">Port of Santos</span>
-            <span class="text-[11px] text-primary">Origin (Loaded)</span>
-          </div>
-
-          <!-- Node 2 -->
-          <div class="flex flex-col items-center gap-2 z-10 group cursor-pointer" onclick="showToast('Atlantic Transit Hub', 'Bunkering & customs clearance completed.', 'info')">
-            <div class="w-12 h-12 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center shadow-[0_0_15px_rgba(242,202,80,0.5)]">
-              <span class="material-symbols-outlined text-xl">directions_boat</span>
-            </div>
-            <span class="text-xs font-bold text-white uppercase tracking-wider">Atlantic Hub</span>
-            <span class="text-[11px] text-primary">En Route (AIS Verified)</span>
-          </div>
-
-          <!-- Node 3 -->
-          <div class="flex flex-col items-center gap-2 z-10 group cursor-pointer" onclick="showToast('Suez Canal Passage', 'Convoy transit scheduled for Sep 08.', 'info')">
-            <div class="w-12 h-12 rounded-full bg-primary ring-4 ring-primary/20 text-on-primary font-bold flex items-center justify-center shadow-[0_0_15px_rgba(242,202,80,0.5)]">
-              <span class="material-symbols-outlined text-xl">navigation</span>
-            </div>
-            <span class="text-xs font-bold text-primary uppercase tracking-wider">Suez Canal</span>
-            <span class="text-[11px] text-primary font-bold">Current Corridor</span>
-          </div>
-
-          <!-- Node 4 -->
-          <div class="flex flex-col items-center gap-2 z-10 opacity-60 group cursor-pointer" onclick="showToast('Port of Qingdao (CN)', 'Discharge berth reserved. Est. ETA Sep 16.', 'info')">
-            <div class="w-12 h-12 rounded-full bg-zinc-800 border-2 border-zinc-700 text-zinc-400 flex items-center justify-center">
-              <span class="material-symbols-outlined text-xl">warehouse</span>
-            </div>
-            <span class="text-xs font-bold text-zinc-300 uppercase tracking-wider">Port of Qingdao</span>
-            <span class="text-[11px] text-zinc-500">Destination (Sep 16)</span>
-          </div>
-        </div>
-
-        <div class="mt-8 flex justify-center">
-          <button data-track-shipment data-shipment-id="NS-8820" class="btn-secondary-glow px-6 py-2.5 rounded-lg text-xs font-bold text-primary flex items-center gap-2">
-            <span>Inspect Live AIS Telemetry (NS-8820)</span>
-            <span class="material-symbols-outlined text-sm">open_in_new</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ESTIMATE REQUEST MODAL -->
-  <div id="estimate-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
-    <div id="modal-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
-    <div class="relative z-10 w-full max-w-2xl bg-surface-container rounded-2xl border border-white/10 shadow-2xl p-6 md:p-8 beveled-edge max-h-[90vh] overflow-y-auto">
-      <div class="flex justify-between items-center pb-4 border-b border-zinc-800">
-        <div>
-          <h3 class="text-2xl font-bold text-white font-headline-md">Estimate Request Form</h3>
-          <p class="text-xs text-zinc-400 mt-0.5">Submit your requirements to receive a formal CIF/FOB brokerage quote.</p>
-        </div>
-        <button id="modal-close" class="text-zinc-400 hover:text-white p-2 rounded-lg" aria-label="Close dialog">
-          <span class="material-symbols-outlined">close</span>
-        </button>
-      </div>
-
-      <form id="estimate-modal-form" class="mt-6 space-y-5">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div class="space-y-1.5">
-            <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Full Name *</label>
-            <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-center px-3.5 py-2.5">
-              <input id="modal-name" required class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm" placeholder="Johnathan Doe" type="text"/>
-            </div>
-          </div>
-          <div class="space-y-1.5">
-            <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Email Address *</label>
-            <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-center px-3.5 py-2.5">
-              <input id="modal-email" required class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm" placeholder="you@company.com" type="email"/>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div class="space-y-1.5">
-            <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Company Name</label>
-            <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-center px-3.5 py-2.5">
-              <input id="modal-company" class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm" placeholder="Your Enterprise Ltd" type="text"/>
-            </div>
-          </div>
-          <div class="space-y-1.5">
-            <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Phone / WhatsApp</label>
-            <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-center px-3.5 py-2.5">
-              <input id="modal-phone" class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm" placeholder="+1 234 567 8900" type="tel"/>
-            </div>
-          </div>
-        </div>
-
-        <div class="space-y-1.5">
-          <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Product of Interest *</label>
-          <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-center px-3.5 py-2.5">
-            <input id="modal-product" required class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm font-semibold text-primary" placeholder="Iron Ore / Copper / Coal" type="text"/>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div class="space-y-1.5">
-            <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Quantity / Volume *</label>
-            <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-center px-3.5 py-2.5">
-              <input id="modal-volume" required class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm" placeholder="e.g. 500 MT, 20 containers" type="text"/>
-            </div>
-          </div>
-          <div class="space-y-1.5">
-            <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Destination Country / Port *</label>
-            <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-center px-3.5 py-2.5">
-              <input id="modal-port" required class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm" placeholder="e.g. Port of Rotterdam / Qingdao" type="text"/>
-            </div>
-          </div>
-        </div>
-
-        <div class="space-y-1.5">
-          <label class="text-xs font-label-caps text-zinc-400 uppercase tracking-wider block">Additional Specifications &amp; Terms</label>
-          <div class="recessed-input bg-zinc-900/60 rounded-lg flex items-start px-3.5 py-2.5">
-            <textarea id="modal-details" rows="3" class="bg-transparent border-none focus:ring-0 w-full text-white placeholder-zinc-600 text-sm" placeholder="Target price, timeline, packaging, inspection requirements (SGS/CCIC)..."></textarea>
-          </div>
-        </div>
-
-        <div class="pt-4 border-t border-zinc-800 flex items-center justify-end gap-4">
-          <button type="button" onclick="document.getElementById('modal-close').click()" class="text-zinc-400 hover:text-white text-xs font-bold uppercase tracking-wider px-4 py-2">
-            Cancel
-          </button>
-          <button type="submit" class="btn-3d px-8 py-3 rounded-lg text-xs uppercase tracking-wider font-bold flex items-center gap-2">
-            <span>Request Estimate</span>
-            <span class="material-symbols-outlined text-sm">send</span>
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- LIVE SHIPMENT TRACKER MODAL -->
-  <div id="tracker-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
-    <div id="tracker-modal-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
-    <div class="relative z-10 w-full max-w-3xl bg-surface-container rounded-2xl border border-white/10 shadow-2xl p-6 md:p-8 beveled-edge max-h-[92vh] overflow-y-auto">
-      <div class="flex justify-between items-start pb-4 border-b border-zinc-800">
-        <div>
-          <div class="flex items-center gap-3">
-            <h3 class="text-2xl font-bold text-white font-headline-md">Live Voyage Telemetry</h3>
-            <span id="trk-id" class="font-mono text-xs font-bold bg-primary/20 text-primary px-2.5 py-0.5 rounded border border-primary/30">NS-8820</span>
-          </div>
-          <p id="trk-commodity" class="text-sm text-zinc-300 font-semibold mt-1">62% Fe Fine Iron Ore</p>
-        </div>
-        <button id="tracker-modal-close" class="text-zinc-400 hover:text-white p-2 rounded-lg" aria-label="Close dialog">
-          <span class="material-symbols-outlined">close</span>
-        </button>
-      </div>
-
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6">
-        <div class="bg-surface-container-high p-4 rounded-xl border border-white/5">
-          <span class="text-[10px] uppercase font-label-caps text-zinc-500 block">Vessel (IMO)</span>
-          <span id="trk-vessel" class="text-xs font-bold text-white block mt-1">M/V Iron Prosperity</span>
-        </div>
-        <div class="bg-surface-container-high p-4 rounded-xl border border-white/5">
-          <span class="text-[10px] uppercase font-label-caps text-zinc-500 block">Volume</span>
-          <span id="trk-volume" class="text-xs font-bold text-white block mt-1">50,000 MT</span>
-        </div>
-        <div class="bg-surface-container-high p-4 rounded-xl border border-white/5">
-          <span class="text-[10px] uppercase font-label-caps text-zinc-500 block">Current Status</span>
-          <span id="trk-status" class="text-xs font-bold text-primary block mt-1">Customs Cleared</span>
-        </div>
-        <div class="bg-surface-container-high p-4 rounded-xl border border-white/5">
-          <span class="text-[10px] uppercase font-label-caps text-zinc-500 block">Estimated Arrival</span>
-          <span id="trk-eta" class="text-xs font-bold text-white block mt-1">Sep 06, 2026</span>
-        </div>
-      </div>
-
-      <div class="bg-zinc-900/90 p-5 rounded-xl border border-zinc-800 mb-6 space-y-3">
-        <div class="flex justify-between text-xs">
-          <span class="text-zinc-400">Route: <strong id="trk-route" class="text-white">Port Hedland &rarr; Qingdao</strong></span>
-          <span class="text-zinc-400">Satellite Ping: <span id="trk-ping" class="text-primary font-mono">5 mins ago</span></span>
-        </div>
-        <div class="w-full bg-zinc-800 h-2 rounded-full overflow-hidden">
-          <div id="trk-progress-bar" class="bg-gradient-to-r from-amber-500 to-primary h-full rounded-full transition-all duration-500" style="width: 95%;"></div>
-        </div>
-        <div class="flex justify-between text-[11px] text-zinc-500 font-mono">
-          <span>Coordinates: <span id="trk-coords">36&deg;04'N, 120&deg;19'E</span></span>
-          <span class="text-green-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> AIS Active</span>
-        </div>
-      </div>
-
-      <div class="space-y-3">
-        <h4 class="text-xs font-label-caps text-primary uppercase tracking-wider">Milestone Verification Record</h4>
-        <div id="trk-milestones" class="space-y-1"></div>
-      </div>
-
-      <div class="mt-6 pt-4 border-t border-zinc-800 flex justify-between items-center text-xs">
-        <span class="text-zinc-400">Certification: <strong id="trk-cert" class="text-primary">Bureau Veritas Approved</strong></span>
-        <button onclick="showToast('Assay Certificate Downloaded', 'Bureau Veritas Inspection #BV-9921 saved to local downloads.', 'info')" class="text-primary hover:underline flex items-center gap-1 font-bold">
-          <span class="material-symbols-outlined text-sm">download</span>
-          Download Bill of Lading Preview
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="bg-zinc-950 w-full border-t border-zinc-800 mt-auto">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-12 py-16 max-w-7xl mx-auto">
-      <div class="space-y-5">
-        <div class="text-xl font-bold text-amber-500 font-headline-md tracking-tight">NURSHAH GLOBAL</div>
-        <p class="text-zinc-400 text-sm font-body-md leading-relaxed">
-          A global leader in physical material brokerage and logistics management, headquartered in the heart of international trade. Built on trust, delivered with precision.
-        </p>
-      </div>
-
-      <div class="space-y-4">
-        <div class="text-on-background font-bold font-headline-md text-base mb-2">Direct Desks</div>
-        <div class="flex items-center gap-2 text-zinc-400 hover:text-amber-500 transition-colors text-sm">
-          <span class="material-symbols-outlined text-sm text-primary">mail</span>
-          <a href="mailto:info@nurshahexports.com">info@nurshahexports.com</a>
-        </div>
-        <div class="flex items-center gap-2.5 text-zinc-400 hover:text-amber-500 transition-colors text-sm">
-          <img src="assets/images/founder.jpg" alt="Muhammad Huzaifa Ali" class="w-6 h-6 rounded-full object-cover border border-primary/40 shrink-0"/>
-          <a href="mailto:huzaifaali@nurshahexports.com">huzaifaali@nurshahexports.com (CEO Desk)</a>
-        </div>
-      </div>
-
-      <div class="space-y-4">
-        <div class="text-on-background font-bold font-headline-md text-base mb-2">Platform Navigation</div>
-        <nav class="flex flex-col space-y-2 text-sm text-zinc-400">
-          <a class="hover:text-amber-400 transition-colors" href="index.html">Home Overview</a>
-          <a class="hover:text-amber-400 transition-colors" href="products.html">Industrial Material Catalog</a>
-          <a class="hover:text-amber-400 transition-colors" href="estimate.html">Rate Estimator &amp; Listing Portal</a>
-          <a class="hover:text-amber-400 transition-colors" href="about.html">About &amp; Founder Message</a>
-          <a class="hover:text-amber-400 transition-colors" href="contact.html">Contact HQ &amp; Partnerships</a>
         </nav>
-      </div>
+
+        <div class="border-t border-zinc-800/80 bg-zinc-950/95 py-1.5 overflow-hidden relative">
+            <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-zinc-950 to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-zinc-950 to-transparent z-10 pointer-events-none"></div>
+            <div class="flex items-center">
+                <span class="pl-6 pr-3 text-[10px] font-bold text-emerald-400 tracking-wider uppercase whitespace-nowrap flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block"></span>
+                    SPOT FEEDS:
+                </span>
+                <div class="overflow-hidden flex-1">
+                    <div id="ticker-track" class="ticker-track"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="drawer-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    <aside id="mobile-drawer" class="fixed top-0 right-0 w-80 max-w-full h-full bg-surface-bright border-l border-outline-variant z-50 translate-x-full transition-transform duration-300 flex flex-col p-6 shadow-2xl">
+        <div class="flex items-center justify-between pb-6 border-b border-outline-variant">
+            <div><img src="assets/images/logo-1.jpeg" alt="Nurshah Exports" class="h-8 w-auto" /></div>
+            <button id="drawer-close" class="text-on-surface-variant hover:text-on-surface p-2 rounded-lg" aria-label="Close Menu">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+
+        <nav class="flex flex-col space-y-5 py-8 text-base font-semibold">
+            <a href="index.html" class="text-on-surface hover:text-primary flex items-center justify-between">
+                <span>Home</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+            <a href="products.html" class="text-primary flex items-center justify-between">
+                <span>Products Catalog</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+            <a href="estimate.html" class="text-on-surface hover:text-primary flex items-center justify-between">
+                <span>Rate Estimator &amp; Listing</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+            <a href="about.html" class="text-on-surface hover:text-primary flex items-center justify-between">
+                <span>About &amp; Founder</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+            <a href="contact.html" class="text-on-surface hover:text-primary flex items-center justify-between">
+                <span>Contact HQ</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+        </nav>
+
+        <div class="mt-auto pt-6 border-t border-outline-variant space-y-4">
+            <a href="estimate.html" class="btn-3d w-full py-3 rounded-lg text-center text-xs uppercase tracking-wider block">
+                List Your Product
+            </a>
+        </div>
+    </aside>
+
+    <main class="pt-32 pb-24 px-6 md:px-margin max-w-7xl mx-auto flex-1 w-full">
+
+        <div class="mb-12">
+            <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-3.5 py-1 rounded-full text-primary font-label-caps text-xs tracking-widest mb-4">
+                VERIFIED INDUSTRIAL COMMODITIES
+            </div>
+            <h1 class="font-headline-lg text-4xl sm:text-5xl text-primary mb-4 font-bold">Industrial Material Portfolio</h1>
+            <p class="font-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+                Source high-grade physical commodities, processed metals, agricultural resources, and renewable energy infrastructure through our globally vetted network. Built on trust, delivered with maritime precision.
+            </p>
+        </div>
+
+        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant beveled-edge mb-10 flex flex-col lg:flex-row justify-between items-stretch lg:items-center gap-4">
+            <div class="recessed-input rounded-lg flex items-center px-4 py-2.5 w-full lg:w-80">
+                <span class="material-symbols-outlined text-primary text-lg mr-2.5">search</span>
+                <input id="catalog-search" type="text" placeholder="Search commodity name, grade, origin..." class="bg-transparent border-none focus:ring-0 w-full text-sm text-on-surface placeholder-on-surface-variant" />
+            </div>
+
+            <div class="flex flex-wrap gap-2 items-center">
+                <button data-category-filter="all" class="px-4 py-2 rounded-lg text-xs font-bold font-label-caps uppercase transition-all bg-primary text-on-primary border border-primary">
+                    All Materials
+                </button>
+                <button data-category-filter="metals" class="px-4 py-2 rounded-lg text-xs font-bold font-label-caps uppercase transition-all bg-surface-bright text-on-surface-variant border border-outline-variant hover:text-on-surface">
+                    Metals &amp; Ores
+                </button>
+                <button data-category-filter="energy" class="px-4 py-2 rounded-lg text-xs font-bold font-label-caps uppercase transition-all bg-surface-bright text-on-surface-variant border border-outline-variant hover:text-on-surface">
+                    CleanTech &amp; Energy
+                </button>
+                <button data-category-filter="recycled" class="px-4 py-2 rounded-lg text-xs font-bold font-label-caps uppercase transition-all bg-surface-bright text-on-surface-variant border border-outline-variant hover:text-on-surface">
+                    Recycled Scrap
+                </button>
+                <button data-category-filter="agriculture" class="px-4 py-2 rounded-lg text-xs font-bold font-label-caps uppercase transition-all bg-surface-bright text-on-surface-variant border border-outline-variant hover:text-on-surface">
+                    Agriculture
+                </button>
+                <button data-category-filter="textiles" class="px-4 py-2 rounded-lg text-xs font-bold font-label-caps uppercase transition-all bg-surface-bright text-on-surface-variant border border-outline-variant hover:text-on-surface">
+                    Textiles
+                </button>
+                <button data-category-filter="technology"
+                        class="category-filter rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-semibold text-white/70 transition hover:border-primary/40 hover:text-primary">
+                    Drone Technologies
+                </button>
+
+                <button data-category-filter="furniture"
+                        class="category-filter rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-semibold text-white/70 transition hover:border-primary/40 hover:text-primary">
+                    Furniture
+                </button>
+            </div>
+
+            <span id="catalog-count" class="text-xs text-on-surface-variant self-center font-mono">
+                11 commodities displayed
+            </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+
+            <div data-product-card data-category="metals" data-name="Iron Ore (62% Fe Fine Magnetite Hematite)" class="group relative bg-surface-bright border border-outline-variant rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
+                <div class="aspect-video relative overflow-hidden">
+                    <img alt="Iron Ore" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB756bLiFLWrZS3k80-WvNEPw1R6LWYqJq4ygeeUMDmvPBFg2F3zkIU7mKazIDVuXZp9_iNIhredY3Ud2xQoCorKxAtMxqMWZyiWICA_rrg_wj6nWn_9dtDErKAv58BFXTGdlhIhBSn1X9pm48dvRVtMd5q6IV3u846r4GsivQIJE5WUEOVQW_nyleLV0b27skBtNzP1QwZM2YjXxC7Iy1PLQ7g7kb-EkKKsj-TeLSMIeUoumua2fjFeNOsAKiw7XsqWNJ_BZ9eD7fP" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-50"></div>
+                    <span class="absolute top-3 right-3 bg-primary/95 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-on-primary border border-primary/40">
+                        62% Fe Content
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Metals &amp; Ores</span>
+                        <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Iron Ore (Fine &amp; Lump)</h3>
+                        <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">High-purity magnetite and hematite sourced from Tier-1 mining jurisdictions in Australia and Brazil.</p>
+                        <div class="text-xs text-on-surface-variant space-y-1 mb-6">
+                            <p><strong class="text-on-surface">Origin:</strong> Port Hedland (AU) / Tubar&atilde;o (BR)</p>
+                            <p><strong class="text-on-surface">Min Order:</strong> 10,000 MT Bulk Vessel</p>
+                            <p><strong class="text-on-surface">Incoterms:</strong> CFR Qingdao, FOB Santos</p>
+                        </div>
+                    </div>
+                    <button data-request-estimate data-product="62% Fe Fine Iron Ore" data-moq="10000" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
+                        <span>Request Estimate</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+            <div data-product-card data-category="metals" data-name="Grade A Copper Cathodes Electrolytic 99.99%" class="group relative bg-surface-bright border border-outline-variant rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
+                <div class="aspect-video relative overflow-hidden">
+                    <img alt="Copper Cathodes" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKwtzrvgtPkxzx2xVWwPfPuErwdYaPB8LMvYJGJKamgFjjxtyb2topRlInf2noTnG0xqXZJte_yAWxajEjKPP-A-r_-j3jbrr-glxi4jQZ-NWPNuzzwkf2B1M6PSiJEnuHD7WzKRrwYMY4KejjEoCd-SVtUjSSzU7BEucSYLIlpiYEsdd_-dwisszKonKhPvcMnJuH3GoKxZjMUennGX_t1E1wscYWqvW3xdf1hOL7HIDiDu-n_igSeLmjntgDJ3Pl3Q5bwbPCH_iL" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-50"></div>
+                    <span class="absolute top-3 right-3 bg-primary/95 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-on-primary border border-primary/40">
+                        99.99% Purity
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Metals &amp; Ores</span>
+                        <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Grade A Copper Cathodes</h3>
+                        <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Electrolytic grade A cathode sheets conforming to BS EN 1978:1998 standards for wire rod and copper tube manufacturing.</p>
+                        <div class="text-xs text-on-surface-variant space-y-1 mb-6">
+                            <p><strong class="text-on-surface">Origin:</strong> Democratic Republic of Congo / Zambia</p>
+                            <p><strong class="text-on-surface">Min Order:</strong> 500 MT Containerized</p>
+                            <p><strong class="text-on-surface">Incoterms:</strong> CIF Rotterdam, CIF Qingdao</p>
+                        </div>
+                    </div>
+                    <button data-request-estimate data-product="Grade A Copper Cathodes" data-moq="500" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
+                        <span>Request Estimate</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+            <div data-product-card data-category="recycled" data-name="Metal Scrap HMS 1&2 Heavy Melting Steel Shredded" class="group relative bg-surface-bright border border-outline-variant rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
+                <div class="aspect-video relative overflow-hidden">
+                    <img alt="Metal Scrap" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaiVkabcdm31JiGP9vId7rjim2_kSkWfI96hORFhrp8gyvi5yasWr7S4EDySov5CiAiFraGSDIDAGidRlB2doeyaLl-dQCnL1VGx5D6QKaO-t7xK-WkCsAnRMtilB3rDth05X0TvvQTyDpGnwk9mQ7ahLkPb2m-rCCnSPNhJCd6kFCbFVT7ZmFrg2SaPBSYXocLHMPUZHX0La-ao2qT1fZGidRAyHnwg7ZaZK3_Iia9WHjCkLW6zzHJAHf_XNT49dw2hrBjls6nMDQ" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-50"></div>
+                    <span class="absolute top-3 right-3 bg-primary/95 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-on-primary border border-primary/40">
+                        ISRI 200-206
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Recycled Assets</span>
+                        <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Heavy Melting Steel Scrap (HMS 1&amp;2)</h3>
+                        <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">HMS 80:20 blend and shredded steel scrap prepared specifically for electric arc furnace charging.</p>
+                        <div class="text-xs text-on-surface-variant space-y-1 mb-6">
+                            <p><strong class="text-on-surface">Origin:</strong> North America / Northern Europe</p>
+                            <p><strong class="text-on-surface">Min Order:</strong> 1,000 MT</p>
+                            <p><strong class="text-on-surface">Incoterms:</strong> CFR Aliaga, CFR Nhava Sheva</p>
+                        </div>
+                    </div>
+                    <button data-request-estimate data-product="Metal Scrap (HMS 1&2)" data-moq="1000" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
+                        <span>Request Estimate</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+            <div data-product-card data-category="metals" data-name="Thermal Coal GAR 5800 Industrial Energy" class="group relative bg-surface-bright border border-outline-variant rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
+                <div class="aspect-video relative overflow-hidden">
+                    <img alt="Thermal Coal" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAudioHyhv50qkZnwv28yqgO-dtOmXDCsXmKjEx8bpRsF35njY0eSXW-PVgkppxcQcDXXxGygbYWxIP5COlXFidIoG-Obun6OYPQTTF2dDK2yaGLs8SkO0EZPRgOc5uG9pl09sLdSepiC9cPVRq6wW6jOwV8LwuLyKVBmgdcAvR24eazrN9myBMteStemWBCDfHL6UDr0vhDqAGXNC8uqH4hF1D3Lql_HkvHmNg-92CM_4yNPkRzvnkSf4K5jhibmCpGyYq44v6E5Yk" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-50"></div>
+                    <span class="absolute top-3 right-3 bg-primary/95 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-on-primary border border-primary/40">
+                        GAR 5800 kcal/kg
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Metals &amp; Energy</span>
+                        <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Thermal Coal (GAR 5800)</h3>
+                        <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Low-sulfur, low-ash thermal steaming coal suitable for utility boilers, cement kilns, and metallurgical power plants.</p>
+                        <div class="text-xs text-on-surface-variant space-y-1 mb-6">
+                            <p><strong class="text-on-surface">Origin:</strong> East Kalimantan (Indonesia)</p>
+                            <p><strong class="text-on-surface">Min Order:</strong> 5,000 MT (Barge/Vessel)</p>
+                            <p><strong class="text-on-surface">Incoterms:</strong> FOB Taboneo, CIF Mundra</p>
+                        </div>
+                    </div>
+                    <button data-request-estimate data-product="Thermal Coal (GAR 5800)" data-moq="5000" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
+                        <span>Request Estimate</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+            <div data-product-card data-category="textiles" data-name="Cotton Yarn 30s 40s Combed Weaving Knitting" class="group relative bg-surface-bright border border-outline-variant rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
+                <div class="aspect-video relative overflow-hidden">
+                    <img alt="Cotton Yarn" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANHuLOQsWZbfuclzG-DCxd-o9a0T_Oj1wn_yJyxvh2zBOJkJXr7nypeol-c3OcRP-rvEGc2BVZlskhEjmSbJb_YLPqXfaBdaZ59jRVlspkSp3dmZhBBH55HT4QE1_2m5AzcWsZF5uhOpO6bLhpm2wslLg54STdd6lTdqbMCudO8x5stGUXWlevmpoDhUtLsHBUzNn1g67uCc6NoIetZk4oxJu4GaSY8EZA4X5_xm80oXG-EOk7TmEu6JYl2m6F0vfnOSacsnHzsx_t" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-50"></div>
+                    <span class="absolute top-3 right-3 bg-primary/95 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-on-primary border border-primary/40">
+                        OEKO-TEX 100
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Textiles</span>
+                        <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Combed Cotton Yarn (30s/40s)</h3>
+                        <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Premium ring-spun 100% cotton yarns engineered for circular knitting and high-speed air-jet weaving looms.</p>
+                        <div class="text-xs text-on-surface-variant space-y-1 mb-6">
+                            <p><strong class="text-on-surface">Origin:</strong> Pakistan / India / Uzbekistan</p>
+                            <p><strong class="text-on-surface">Min Order:</strong> 200 MT (40ft HQ Containers)</p>
+                            <p><strong class="text-on-surface">Incoterms:</strong> CIF Mersin, CIF Chittagong</p>
+                        </div>
+                    </div>
+                    <button data-request-estimate data-product="Cotton Yarn (30s Combed)" data-moq="200" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
+                        <span>Request Estimate</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+            <div data-product-card data-category="energy" data-name="Wind Turbines Utility Scale Nacelles CleanTech" class="group relative bg-surface-bright border border-outline-variant rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
+                <div class="aspect-video relative overflow-hidden">
+                    <img alt="Wind Turbines" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCclsfsgefS0oSs9epgjrMYYRKE8DuoBSG9yQGrQ8FYm8BSZRXc6doJ2PVghnGeA_z1qMhf7W40HSuzTGH2CYoigbvbWCxFEUnGf-aoPY1HUyHYQ8lL4FtyDDwUE9rXiHsTnelK1V00UKPw2h_m3g4gMRg8LRzz2whse9fIjTVDE3XbNoRi_qzl4XnBlB5PV8QKWRGCWbqD3-GmSY2oKLc87MOD-QeeXH4nD5gQC-dLnUXovjlEYsjZTKlot1NK2mDVyZJHbVFiEyQz" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-50"></div>
+                    <span class="absolute top-3 right-3 bg-primary/95 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-on-primary border border-primary/40">
+                        3.5MW - 5.0MW
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Renewable Energy</span>
+                        <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Utility-Scale Wind Turbines</h3>
+                        <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Complete nacelle assemblies, direct-drive generator units, and composite rotor blades for onshore and offshore wind farms.</p>
+                        <div class="text-xs text-on-surface-variant space-y-1 mb-6">
+                            <p><strong class="text-on-surface">Origin:</strong> Germany / Spain / Denmark</p>
+                            <p><strong class="text-on-surface">Min Order:</strong> 2 Units (Heavy Lift Vessel)</p>
+                            <p><strong class="text-on-surface">Incoterms:</strong> CIF Port of Houston, DDP Site</p>
+                        </div>
+                    </div>
+                    <button data-request-estimate data-product="Wind Turbine Nacelles (3.5MW)" data-moq="2" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
+                        <span>Request Estimate</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+            <div data-product-card data-category="agriculture" data-name="Rock Phosphate DAP Fertilizers Agriculture" class="group relative bg-surface-bright border border-outline-variant rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
+                <div class="aspect-video relative overflow-hidden">
+                    <img alt="Phosphate" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgaeDZ4ulFm81xUrp2JPZxx3gR2SMEdf0RbQb-sHZZyO5rJZLdzL-yhAfBu2d70P4vkBpYbHycprKVO9xQLM7aPiKQWGDCcwSpmbtu99ym9y0ktbCGN1SOQ5msgLlm89zDUBrNv894OahGqNnLVuOoRfTlBvE6JOf3oQUOPZlkKnV0k3Y0lOXjwZ38G1Sk-rrPhmj92-rx1dHVY4ExTghMA_fNC-651OnSTZWimTSg-y6R1SzRYNfeZje2eeWUPyXrxEhvKz4J0NUC" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-50"></div>
+                    <span class="absolute top-3 right-3 bg-primary/95 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-on-primary border border-primary/40">
+                        30%-32% P2O5
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Agriculture</span>
+                        <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">High-Grade Rock Phosphate</h3>
+                        <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Direct sedimentary phosphate rock and diammonium phosphate (DAP) for global agronomy and chemical synthesis.</p>
+                        <div class="text-xs text-on-surface-variant space-y-1 mb-6">
+                            <p><strong class="text-on-surface">Origin:</strong> Morocco / Jordan / Egypt</p>
+                            <p><strong class="text-on-surface">Min Order:</strong> 2,000 MT</p>
+                            <p><strong class="text-on-surface">Incoterms:</strong> FOB Casablanca, CIF Santos</p>
+                        </div>
+                    </div>
+                    <button data-request-estimate data-product="High-Grade Rock Phosphate" data-moq="2000" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
+                        <span>Request Estimate</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+            <div data-product-card data-category="energy" data-name="Solar Panels Monocrystalline PERC Photovoltaic CleanTech" class="group relative bg-surface-bright border border-outline-variant rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
+                <div class="aspect-video relative overflow-hidden">
+                    <img alt="Solar Panels" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuVLOQ2yWHYxs-eNRIxoMEQqixZyEa5Ee3fraFXHcKV-TS57-D-mFy6fzC8O71haCRLNz495kZcHUS11Rn39c4jgHy6PZ5zJNA2SP2If4euyZY1uthoV0gaO_M7UcsXZdJckGSCS3XdmXcbWW3i4eKHkQfHJ2MkDMV6kjw7UhJnAG_fgvhSZjW68NIJqv_lv-TFJdUoHGD9twZP0FT8ZCubUy4plwWbitoalug3WjHHlchfs42fd9MjyrFGbp5jubmGDwaladyJpvy" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-50"></div>
+                    <span class="absolute top-3 right-3 bg-primary/95 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-on-primary border border-primary/40">
+                        550W Tier-1
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Renewable Energy</span>
+                        <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Monocrystalline Solar Modules</h3>
+                        <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Bifacial dual-glass solar panels with 21.6% module conversion efficiency designed for utility ground installations.</p>
+                        <div class="text-xs text-on-surface-variant space-y-1 mb-6">
+                            <p><strong class="text-on-surface">Origin:</strong> Vietnam / Malaysia / South Korea</p>
+                            <p><strong class="text-on-surface">Min Order:</strong> 500 Modules (1 MW)</p>
+                            <p><strong class="text-on-surface">Incoterms:</strong> CIF Hamburg, CIF Long Beach</p>
+                        </div>
+                    </div>
+                    <button data-request-estimate data-product="Solar Panels (550W Monocrystalline)" data-moq="500" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
+                        <span>Request Estimate</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+            <div data-product-card data-category="metals" data-name="Aluminum Ingots P1020 99.7% Smelter Grade" class="group relative bg-surface-bright border border-outline-variant rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
+                <div class="aspect-video relative overflow-hidden bg-surface-container-high flex items-center justify-center">
+                    <img src="assets/images/Alumunium.jpg"
+                         alt="Primary Aluminum Ingots (P1020A)"
+                         class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-40"></div>
+                    <span class="absolute top-3 right-3 bg-primary/95 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-on-primary border border-primary/40">
+                        99.7% Al (P1020A)
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">Metals &amp; Ores</span>
+                        <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Primary Aluminum Ingots (P1020A)</h3>
+                        <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Standard high-purity smelter ingots conforming to LME delivery specifications for automotive casting and extrusions.</p>
+                        <div class="text-xs text-on-surface-variant space-y-1 mb-6">
+                            <p><strong class="text-on-surface">Origin:</strong> UAE / Bahrain / Canada</p>
+                            <p><strong class="text-on-surface">Min Order:</strong> 300 MT</p>
+                            <p><strong class="text-on-surface">Incoterms:</strong> CIF Port Klang, FOB Jebel Ali</p>
+                        </div>
+                    </div>
+                    <button data-request-estimate data-product="Aluminum Ingots (P1020)" data-moq="300" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
+                        <span>Request Estimate</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <div data-product-card data-category="technology" data-name="Commercial & Industrial Drones" class="group relative bg-surface-bright border border-outline-variant rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
+                <div class="aspect-video relative overflow-hidden bg-surface-container-high flex items-center justify-center">
+                    <img src="assets/images/drone-technologies.jpg"
+                         alt="Commercial & Industrial Drones"
+                         class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-40"></div>
+                    <span class="absolute top-3 right-3 bg-primary/95 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-on-primary border border-primary/40">
+                        UAV TECHNOLOGY
+                    </span>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">
+                            Drone Technologies
+                        </span>
+
+                        <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">
+                            Commercial &amp; Industrial Drones
+                        </h3>
+
+                        <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">
+                            Professional UAV solutions for agriculture, surveying, mapping, inspection, logistics, and other commercial applications.
+                        </p>
+
+                        <div class="text-xs text-on-surface-variant space-y-1 mb-6">
+                            <p><strong class="text-on-surface">Applications:</strong> Agriculture / Surveying / Inspection</p>
+                            <p><strong class="text-on-surface">Supply:</strong> Commercial &amp; Industrial UAV Platforms</p>
+                            <p><strong class="text-on-surface">Availability:</strong> Global Sourcing</p>
+                        </div>
+                    </div>
+
+                    <button data-request-estimate data-product="Commercial & Industrial Drones" data-moq="1" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
+                        <span>Request Estimate</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <div data-product-card data-category="furniture" data-name="Commercial & Residential Furniture" class="group relative bg-surface-bright border border-outline-variant rounded-xl overflow-hidden beveled-edge gold-glow transition-all duration-500 flex flex-col">
+                <div class="aspect-video relative overflow-hidden bg-surface-container-high flex items-center justify-center">
+                    <img src="assets/images/furniture.jpg"
+                         alt="Commercial & Residential Furniture"
+                         class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-40"></div>
+                    <span class="absolute top-3 right-3 bg-primary/95 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-bold text-on-primary border border-primary/40">
+                        GLOBAL SUPPLY
+                    </span>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-label-caps text-primary uppercase tracking-widest block mb-1">
+                            Furniture
+                        </span>
+
+                        <h3 class="font-headline-sm text-xl font-bold text-on-surface mb-2">
+                            Commercial &amp; Residential Furniture
+                        </h3>
+
+                        <p class="text-sm text-on-surface-variant mb-4 line-clamp-2">
+                            Contemporary and traditional furniture for residential, office, hospitality, and commercial environments, sourced to specification.
+                        </p>
+
+                        <div class="text-xs text-on-surface-variant space-y-1 mb-6">
+                            <p><strong class="text-on-surface">Applications:</strong> Residential / Office / Hospitality</p>
+                            <p><strong class="text-on-surface">Supply:</strong> Finished &amp; Custom Furniture</p>
+                            <p><strong class="text-on-surface">Availability:</strong> Global Sourcing</p>
+                        </div>
+                    </div>
+
+                    <button data-request-estimate data-product="Commercial & Residential Furniture" data-moq="1" class="btn-3d w-full py-3 rounded text-xs uppercase tracking-wider flex justify-center items-center gap-2">
+                        <span>Request Estimate</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <section class="mt-24 p-8 md:p-12 bg-surface-container rounded-2xl border border-outline-variant beveled-edge relative overflow-hidden">
+            <div class="absolute inset-0 brushed-metal pointer-events-none"></div>
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <span class="text-primary font-label-caps text-xs tracking-widest uppercase mb-2 block">MARITIME CORRIDOR STATUS</span>
+                <h2 class="text-2xl md:text-3xl font-headline-md font-bold mb-4">Active Global Trade Corridors</h2>
+                <p class="text-sm text-on-surface-variant mb-12 max-w-2xl mx-auto leading-relaxed">
+                    Real-time movement of active raw material contracts brokered by Nurshah Exports. Our proprietary logistics dispatch links mines to discharging terminals seamlessly.
+                </p>
+
+                <div class="relative flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4 my-8">
+                    <div class="hidden md:block absolute top-6 left-12 right-12 h-[2px] bg-outline-variant -z-0"></div>
+                    <div class="hidden md:block absolute top-6 left-12 w-2/3 h-[2px] bg-gradient-to-r from-primary to-[#0E7C5A] -z-0 shadow-[0_0_10px_rgba(6,78,59,0.3)]"></div>
+
+                    <div class="flex flex-col items-center gap-2 z-10 group cursor-pointer" onclick="showToast('Port of Santos (BR)', 'Loading terminal for 50,000 MT bulk iron ore fines.', 'info')">
+                        <div class="w-12 h-12 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center shadow-[0_0_15px_rgba(6,78,59,0.3)]">
+                            <span class="material-symbols-outlined text-xl">anchor</span>
+                        </div>
+                        <span class="text-xs font-bold text-on-surface uppercase tracking-wider">Port of Santos</span>
+                        <span class="text-[11px] text-primary">Origin (Loaded)</span>
+                    </div>
+
+                    <div class="flex flex-col items-center gap-2 z-10 group cursor-pointer" onclick="showToast('Atlantic Transit Hub', 'Bunkering & customs clearance completed.', 'info')">
+                        <div class="w-12 h-12 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center shadow-[0_0_15px_rgba(6,78,59,0.3)]">
+                            <span class="material-symbols-outlined text-xl">directions_boat</span>
+                        </div>
+                        <span class="text-xs font-bold text-on-surface uppercase tracking-wider">Atlantic Hub</span>
+                        <span class="text-[11px] text-primary">En Route (AIS Verified)</span>
+                    </div>
+
+                    <div class="flex flex-col items-center gap-2 z-10 group cursor-pointer" onclick="showToast('Suez Canal Passage', 'Convoy transit scheduled for Sep 08.', 'info')">
+                        <div class="w-12 h-12 rounded-full bg-primary ring-4 ring-primary/20 text-on-primary font-bold flex items-center justify-center shadow-[0_0_15px_rgba(6,78,59,0.3)]">
+                            <span class="material-symbols-outlined text-xl">navigation</span>
+                        </div>
+                        <span class="text-xs font-bold text-primary uppercase tracking-wider">Suez Canal</span>
+                        <span class="text-[11px] text-primary font-bold">Current Corridor</span>
+                    </div>
+
+                    <div class="flex flex-col items-center gap-2 z-10 opacity-70 group cursor-pointer" onclick="showToast('Port of Qingdao (CN)', 'Discharge berth reserved. Est. ETA Sep 16.', 'info')">
+                        <div class="w-12 h-12 rounded-full bg-surface-container-high border-2 border-outline-variant text-on-surface-variant flex items-center justify-center">
+                            <span class="material-symbols-outlined text-xl">warehouse</span>
+                        </div>
+                        <span class="text-xs font-bold text-on-surface uppercase tracking-wider">Port of Qingdao</span>
+                        <span class="text-[11px] text-on-surface-variant">Destination (Sep 16)</span>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-center">
+                    <button data-track-shipment data-shipment-id="NS-8820" class="btn-secondary-glow px-6 py-2.5 rounded-lg text-xs font-bold text-primary flex items-center gap-2">
+                        <span>Inspect Live AIS Telemetry (NS-8820)</span>
+                        <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="estimate-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <div id="modal-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm"></div>
+        <div class="relative z-10 w-full max-w-2xl bg-surface-bright rounded-2xl border border-outline-variant shadow-2xl p-6 md:p-8 beveled-edge max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center pb-4 border-b border-outline-variant">
+                <div>
+                    <h3 class="text-2xl font-bold text-on-surface font-headline-md">Estimate Request Form</h3>
+                    <p class="text-xs text-on-surface-variant mt-0.5">Submit your requirements to receive a formal CIF/FOB brokerage quote.</p>
+                </div>
+                <button id="modal-close" class="text-on-surface-variant hover:text-on-surface p-2 rounded-lg" aria-label="Close dialog">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+
+            <form id="estimate-modal-form" class="mt-6 space-y-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider block">Full Name *</label>
+                        <div class="recessed-input rounded-lg flex items-center px-3.5 py-2.5">
+                            <input id="modal-name" required class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder-on-surface-variant text-sm" placeholder="Johnathan Doe" type="text" />
+                        </div>
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider block">Email Address *</label>
+                        <div class="recessed-input rounded-lg flex items-center px-3.5 py-2.5">
+                            <input id="modal-email" required class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder-on-surface-variant text-sm" placeholder="you@company.com" type="email" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider block">Company Name</label>
+                        <div class="recessed-input rounded-lg flex items-center px-3.5 py-2.5">
+                            <input id="modal-company" class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder-on-surface-variant text-sm" placeholder="Your Enterprise Ltd" type="text" />
+                        </div>
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider block">Phone / WhatsApp</label>
+                        <div class="recessed-input rounded-lg flex items-center px-3.5 py-2.5">
+                            <input id="modal-phone" class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder-on-surface-variant text-sm" placeholder="+1 234 567 8900" type="tel" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider block">Product of Interest *</label>
+                    <div class="recessed-input rounded-lg flex items-center px-3.5 py-2.5">
+                        <input id="modal-product" required class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder-on-surface-variant text-sm font-semibold text-primary" placeholder="Iron Ore / Copper / Coal" type="text" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider block">Quantity / Volume *</label>
+                        <div class="recessed-input rounded-lg flex items-center px-3.5 py-2.5">
+                            <input id="modal-volume" required class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder-on-surface-variant text-sm" placeholder="e.g. 500 MT, 20 containers" type="text" />
+                        </div>
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider block">Destination Country / Port *</label>
+                        <div class="recessed-input rounded-lg flex items-center px-3.5 py-2.5">
+                            <input id="modal-port" required class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder-on-surface-variant text-sm" placeholder="e.g. Port of Rotterdam / Qingdao" type="text" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="text-xs font-label-caps text-on-surface-variant uppercase tracking-wider block">Additional Specifications &amp; Terms</label>
+                    <div class="recessed-input rounded-lg flex items-start px-3.5 py-2.5">
+                        <textarea id="modal-details" rows="3" class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder-on-surface-variant text-sm" placeholder="Target price, timeline, packaging, inspection requirements (SGS/CCIC)..."></textarea>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-outline-variant flex items-center justify-end gap-4">
+                    <button type="button" onclick="document.getElementById('modal-close').click()" class="text-on-surface-variant hover:text-on-surface text-xs font-bold uppercase tracking-wider px-4 py-2">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn-3d px-8 py-3 rounded-lg text-xs uppercase tracking-wider font-bold flex items-center gap-2">
+                        <span>Request Estimate</span>
+                        <span class="material-symbols-outlined text-sm">send</span>
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 md:px-12 pb-8 border-t border-white/5 pt-8 text-center text-xs text-zinc-500">
-      &copy; 2024&ndash;2026 Nurshah Global. All Rights Reserved.
-    </div>
-  </footer>
+    <div id="tracker-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <div id="tracker-modal-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm"></div>
+        <div class="relative z-10 w-full max-w-3xl bg-surface-bright rounded-2xl border border-outline-variant shadow-2xl p-6 md:p-8 beveled-edge max-h-[92vh] overflow-y-auto">
+            <div class="flex justify-between items-start pb-4 border-b border-outline-variant">
+                <div>
+                    <div class="flex items-center gap-3">
+                        <h3 class="text-2xl font-bold text-on-surface font-headline-md">Live Voyage Telemetry</h3>
+                        <span id="trk-id" class="font-mono text-xs font-bold bg-primary/15 text-primary px-2.5 py-0.5 rounded border border-primary/30">NS-8820</span>
+                    </div>
+                    <p id="trk-commodity" class="text-sm text-on-surface-variant font-semibold mt-1">62% Fe Fine Iron Ore</p>
+                </div>
+                <button id="tracker-modal-close" class="text-on-surface-variant hover:text-on-surface p-2 rounded-lg" aria-label="Close dialog">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
 
-  <!-- MAIN SCRIPT -->
-  <script src="assets/js/main.js"></script>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6">
+                <div class="bg-surface-container-high p-4 rounded-xl border border-outline-variant">
+                    <span class="text-[10px] uppercase font-label-caps text-on-surface-variant block">Vessel (IMO)</span>
+                    <span id="trk-vessel" class="text-xs font-bold text-on-surface block mt-1">M/V Iron Prosperity</span>
+                </div>
+                <div class="bg-surface-container-high p-4 rounded-xl border border-outline-variant">
+                    <span class="text-[10px] uppercase font-label-caps text-on-surface-variant block">Volume</span>
+                    <span id="trk-volume" class="text-xs font-bold text-on-surface block mt-1">50,000 MT</span>
+                </div>
+                <div class="bg-surface-container-high p-4 rounded-xl border border-outline-variant">
+                    <span class="text-[10px] uppercase font-label-caps text-on-surface-variant block">Current Status</span>
+                    <span id="trk-status" class="text-xs font-bold text-primary block mt-1">Customs Cleared</span>
+                </div>
+                <div class="bg-surface-container-high p-4 rounded-xl border border-outline-variant">
+                    <span class="text-[10px] uppercase font-label-caps text-on-surface-variant block">Estimated Arrival</span>
+                    <span id="trk-eta" class="text-xs font-bold text-on-surface block mt-1">Sep 06, 2026</span>
+                </div>
+            </div>
+
+            <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant mb-6 space-y-3">
+                <div class="flex justify-between text-xs">
+                    <span class="text-on-surface-variant">Route: <strong id="trk-route" class="text-on-surface">Port Hedland &rarr; Qingdao</strong></span>
+                    <span class="text-on-surface-variant">Satellite Ping: <span id="trk-ping" class="text-primary font-mono">5 mins ago</span></span>
+                </div>
+                <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+                    <div id="trk-progress-bar" class="bg-gradient-to-r from-[#0E7C5A] to-primary h-full rounded-full transition-all duration-500" style="width: 95%;"></div>
+                </div>
+                <div class="flex justify-between text-[11px] text-on-surface-variant font-mono">
+                    <span>Coordinates: <span id="trk-coords">36&deg;04'N, 120&deg;19'E</span></span>
+                    <span class="text-emerald-700 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> AIS Active</span>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="text-xs font-label-caps text-primary uppercase tracking-wider">Milestone Verification Record</h4>
+                <div id="trk-milestones" class="space-y-1"></div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-outline-variant flex justify-between items-center text-xs">
+                <span class="text-on-surface-variant">Certification: <strong id="trk-cert" class="text-primary">Bureau Veritas Approved</strong></span>
+                <button onclick="showToast('Assay Certificate Downloaded', 'Bureau Veritas Inspection #BV-9921 saved to local downloads.', 'info')" class="text-primary hover:underline flex items-center gap-1 font-bold">
+                    <span class="material-symbols-outlined text-sm">download</span>
+                    Download Bill of Lading Preview
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-surface-container-low w-full border-t border-outline-variant mt-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-12 py-16 max-w-7xl mx-auto">
+            <div class="space-y-5">
+                <img src="assets/images/logo-1.jpeg" alt="Nurshah Exports" class="h-10 w-auto mb-1" />
+                <p class="text-on-surface-variant text-sm font-body-md leading-relaxed">
+                    A global leader in physical material brokerage and logistics management, headquartered in the heart of international trade. Built on trust, delivered with precision.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="text-on-background font-bold font-headline-md text-base mb-2">Direct Desks</div>
+                <div class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-sm">
+                    <span class="material-symbols-outlined text-sm text-primary">mail</span>
+                    <a href="mailto:info@nurshahexports.com">info@nurshahexports.com</a>
+                </div>
+                <div class="flex items-center gap-2.5 text-on-surface-variant hover:text-primary transition-colors text-sm">
+                    <img src="assets/images/founder.jpg" alt="Muhammad Huzaifa Ali" class="w-6 h-6 rounded-full object-cover border border-primary/40 shrink-0" />
+                    <a href="mailto:huzaifaali@nurshahexports.com">huzaifaali@nurshahexports.com (CEO Desk)</a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="text-on-background font-bold font-headline-md text-base mb-2">Platform Navigation</div>
+                <nav class="flex flex-col space-y-2 text-sm text-on-surface-variant">
+                    <a class="hover:text-primary transition-colors" href="index.html">Home Overview</a>
+                    <a class="hover:text-primary transition-colors" href="products.html">Industrial Material Catalog</a>
+                    <a class="hover:text-primary transition-colors" href="estimate.html">Rate Estimator &amp; Listing Portal</a>
+                    <a class="hover:text-primary transition-colors" href="about.html">About &amp; Founder Message</a>
+                    <a class="hover:text-primary transition-colors" href="contact.html">Contact HQ &amp; Partnerships</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 pb-8 border-t border-outline-variant pt-8 text-center text-xs text-on-surface-variant">
+            &copy; 2024&ndash;2026 Nurshah Exports. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 /**
- * Nurshah Global Trade Portal - Main JavaScript Controller
+ * Nurshah Exports Trade Portal - Main JavaScript Controller
  * Handles interactive pricing, live ticker, modals, mobile navigation,
  * shipment tracking, catalog search/filter, and listing persistence.
  */

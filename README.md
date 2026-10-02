@@ -1,8 +1,8 @@
-# Nurshah Global &bull; Premier Physical Commodity Brokerage Portal
+# Nurshah Exports &bull; Premier Physical Commodity Brokerage Portal
 
 > **"We Weave Global Connections"** &mdash; *Old World Trust. New World Technology.*
 
-Nurshah Global is an institutional physical commodity brokerage firm specializing in the global flow of high-value raw materials (Metals, Minerals, Energy Resources, Industrial Materials, and CleanTech Infrastructure).
+Nurshah Exports is an institutional physical commodity brokerage firm specializing in the global flow of high-value raw materials (Metals, Minerals, Energy Resources, Industrial Materials, and CleanTech Infrastructure).
 
 ---
 

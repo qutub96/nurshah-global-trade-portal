@@ -1,7 +1,7 @@
 {
   "name": "nurshah-global-trade-portal",
   "version": "1.0.0",
-  "description": "Nurshah Global - Premier Physical Commodity Brokerage & Global Trade Portal",
+  "description": "Nurshah Exports - Premier Physical Commodity Brokerage & Global Trade Portal",
   "main": "index.html",
   "scripts": {
     "start": "npx serve . -l 3000",
@@ -15,6 +15,6 @@
     "trade-portal",
     "logistics"
   ],
-  "author": "Nurshah Global",
+  "author": "Nurshah Exports",
   "license": "ISC"
 }
