@@ -35,3 +35,6 @@ logs/
 .idea/
 *.sublime-project
 *.sublime-workspace
+.vs/ 
+.vs/ 
+.vs/
